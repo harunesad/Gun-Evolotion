@@ -1,0 +1,40 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using TMPro;
+
+public class EnemyStateManager : MonoBehaviour
+{
+    public float bulletSpeed;
+    public float spawnSpeed;
+    public int needKillBullet;
+    public TextMeshProUGUI needKillBulletText;
+
+    EnemyBaseState currentState;
+    public EnemyIdleState IdleState = new EnemyIdleState();
+    public EnemySpawnState SpawnState = new EnemySpawnState();
+    public EnemyDieState DieState = new EnemyDieState();
+    void Start()
+    {
+        needKillBullet *= (GameEnd.end.levelNumber + 1);
+        currentState = IdleState;
+        currentState.EnterState(this);
+    }
+    private void OnTriggerStay(Collider other)
+    {
+        currentState.OnTriggerStay(this, other);
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        currentState.OnTriggerExit(this, other);
+    }
+    void Update()
+    {
+        currentState.UpdateState(this);
+    }
+    public void SwitchState(EnemyBaseState state)
+    {
+        currentState = state;
+        state.EnterState(this);
+    }
+}
