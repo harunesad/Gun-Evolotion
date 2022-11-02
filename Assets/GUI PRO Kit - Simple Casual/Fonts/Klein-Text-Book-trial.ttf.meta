@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: dedec7ca8fbfc944197c570757489fe1
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Klein Text Trial
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: f1d075b6431cb2b468c7f405f97bcda4, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

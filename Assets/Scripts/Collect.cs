@@ -57,11 +57,12 @@ public class Collect : MonoBehaviour
                     collectedGuns = FirstGunSpawn.first.guns[i];
                 }
             }
-            SpawnPlayerBullet spawnPlayer = FindObjectOfType<SpawnPlayerBullet>();
+            //SpawnPlayerBullet spawnPlayer = FindObjectOfType<SpawnPlayerBullet>();
             //GameObject spawnPoint = spawnPlayer.transform.parent.gameObject;
             //Destroy(FindObjectOfType<PlayerStateManager>().gameObject);
             //Destroy(spawnPlayer);
-            spawnPlayer.gameObject.SetActive(false);
+            //spawnPlayer.gameObject.SetActive(false);
+            FirstGunSpawn.first.firstGunObj.SetActive(false);
             collectedGuns.gameObject.SetActive(true);
             FirstGunSpawn.first.firstGunObj = collectedGuns;
             //var gun = Instantiate(collectedGuns, spawnPoint.transform.position, Quaternion.identity);

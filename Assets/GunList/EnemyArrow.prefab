@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 121662149720980329}
   - component: {fileID: 2762057172541656995}
   - component: {fileID: 1637639788136187406}
-  - component: {fileID: 3209882198391178836}
-  m_Layer: 7
-  m_Name: arrow
+  - component: {fileID: 934426667704329905}
+  m_Layer: 10
+  m_Name: EnemyArrow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -99,7 +99,7 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4019234525060620036, guid: f564cd89291d66043bda29db796fdd65, type: 3}
---- !u!114 &3209882198391178836
+--- !u!114 &934426667704329905
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -108,8 +108,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 4419210106269724278}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51e3f1557b053d748b7beecf6230006d, type: 3}
+  m_Script: {fileID: 11500000, guid: 2af83ff7886112d4eb226aa138562acd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   bulletSpeed: 25
-  spawnSpeed: 1
+  attack: 1

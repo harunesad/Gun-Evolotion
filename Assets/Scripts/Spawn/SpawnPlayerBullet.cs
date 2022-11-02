@@ -14,6 +14,7 @@ public class SpawnPlayerBullet : MonoBehaviour
     private void Start()
     {
         spawnPoint = gameObject.transform.parent;
+        spawnPoint = gameObject.transform.GetChild(0);
     }
 
     public void SpawnObjects()
@@ -21,7 +22,7 @@ public class SpawnPlayerBullet : MonoBehaviour
         if (stateManager != null)
         {
             repeatBullet = bulletCount;
-            Instantiate(spawnBullet, spawnPoint.position + Vector3.down, Quaternion.identity);
+            Instantiate(spawnBullet, spawnPoint.position, Quaternion.identity);
             StartCoroutine(Attack());
         }
     }

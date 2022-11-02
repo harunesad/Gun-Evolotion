@@ -7,7 +7,8 @@ using DG.Tweening;
 public class PlayerBulletAttack : MonoBehaviour
 {
     public float bulletSpeed;
-    public float spawnSpeed;
+    public int attack;
+    Transform parent;
     void Update()
     {
         transform.Translate(Vector3.forward * Time.deltaTime * bulletSpeed);
@@ -15,14 +16,19 @@ public class PlayerBulletAttack : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        Transform parent = other.transform.GetChild(0).gameObject.transform;
-        GameObject triggerObj = parent.GetChild(0).gameObject;
-        int needKillCount = triggerObj.GetComponent<EnemyStateManager>().needKillBullet;
-        TextMeshProUGUI needKillText = triggerObj.GetComponent<EnemyStateManager>().needKillBulletText;
-        needKillCount--;
+        parent = other.transform.GetChild(0);
+        for (int i = 0; i < 7; i++)
+        {
+            parent = parent.transform.GetChild(0);
+        }
+        Debug.Log(parent.name);
+        //GameObject triggerObj = parent.GetChild(0).gameObject;
+        int needKillCount = parent.GetComponent<EnemyStateManager>().needKillBullet;
+        TextMeshProUGUI needKillText = parent.GetComponent<EnemyStateManager>().needKillBulletText;
+        needKillCount -= attack;
         needKillText.text = "" + needKillCount;
-        triggerObj.GetComponent<EnemyStateManager>().needKillBullet = needKillCount;
-        triggerObj.GetComponent<EnemyStateManager>().needKillBulletText = needKillText;
+        parent.GetComponent<EnemyStateManager>().needKillBullet = needKillCount;
+        parent.GetComponent<EnemyStateManager>().needKillBulletText = needKillText;
         Vector3 scale = new Vector3(other.transform.localScale.x, other.transform.localScale.y, other.transform.localScale.z);
         other.transform.DOScale(scale * 1.1f, 0.1f).OnComplete(() => 
         {

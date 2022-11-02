@@ -17,7 +17,7 @@ public class EnemyIdleState : EnemyBaseState
 
     public override void OnTriggerStay(EnemyStateManager enemy, Collider other)
     {
-        enemy.SwitchState(enemy.SpawnState);
+        //enemy.SwitchState(enemy.SpawnState);
     }
 
     public override void UpdateState(EnemyStateManager enemy)

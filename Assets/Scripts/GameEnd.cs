@@ -55,6 +55,7 @@ public class GameEnd : MonoBehaviour
         gameOver.SetActive(true);
         //stateManager.CancelInvoke();
         Destroy(FindObjectOfType<PlayerStateManager>().GetComponent<PlayerStateManager>());
+        Destroy(FindObjectOfType<SpawnPlayerBullet>().GetComponent<SpawnPlayerBullet>());
         Collect.collect.EndGame();
         //Destroy(enemyState.gameObject);
         Collect.collect.isStart = false;
