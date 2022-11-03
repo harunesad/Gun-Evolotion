@@ -30,9 +30,22 @@ public class GameEnd : MonoBehaviour
     {
         if (collision.gameObject.layer == 6 && collision.gameObject.transform.position.z < 2)
         {
+            Debug.Log(collision.gameObject.name);
             GameOver();
         }
         if (collision.gameObject.layer == 6 && collision.gameObject.transform.position.z > 2)
+        {
+            Complete();
+        }
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if ((other.gameObject.layer == 14) && other.gameObject.transform.position.z < 2)
+        {
+            Debug.Log(other.gameObject.name);
+            GameOver();
+        }
+        if ((other.gameObject.layer == 14) && other.gameObject.transform.position.z > 2)
         {
             Complete();
         }

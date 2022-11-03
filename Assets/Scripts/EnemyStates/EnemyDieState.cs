@@ -17,10 +17,10 @@ public class EnemyDieState : EnemyBaseState
 
         //GameObject enemySoldier = parent.transform.parent.gameObject;
 
-        //if (enemy.gameObject.layer == 9)
-        //{
-        //    enemy.gameObject.layer = 12;
-        //}
+        if (enemy.gameObject.layer == 14)
+        {
+            enemy.gameObject.layer = 12;
+        }
         parent.layer = 0;
         enemy.gameObject.transform.parent = null;
         enemy.gameObject.transform.localScale = new Vector3(1, 1, 1);
@@ -36,6 +36,7 @@ public class EnemyDieState : EnemyBaseState
         Object.Destroy(parent.GetComponent<CapsuleCollider>());
         Object.Destroy(enemy.enemySpawn);
         Object.Destroy(parent, 2);
+        Object.Destroy(parent.transform.GetChild(2).gameObject, 0.1f);
 
         PlayerStateManager playerState = Object.FindObjectOfType<PlayerStateManager>();
         SpawnPlayerBullet spawn = Object.FindObjectOfType<SpawnPlayerBullet>();

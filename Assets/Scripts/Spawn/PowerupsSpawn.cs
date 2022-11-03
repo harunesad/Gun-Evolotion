@@ -21,10 +21,10 @@ public class PowerupsSpawn : MonoBehaviour
         int randomPosX = Random.Range(0, posX.Count);
         int randomPosZ = Random.Range(0, posZ.Count);
 
-        Instantiate(powerup[random], new Vector3(posX[randomPosX], 2, posZ[randomPosZ]), Quaternion.identity);
+        Instantiate(powerup[random], new Vector3(posX[randomPosX], 1.5f, posZ[randomPosZ]), Quaternion.identity);
         float pos = posX[randomPosX];
         posX.RemoveAt(randomPosX);
-        Instantiate(powerdown[random], new Vector3(posX[0], 2, posZ[randomPosZ]), Quaternion.identity);
+        Instantiate(powerdown[random], new Vector3(posX[0], 1.5f, posZ[randomPosZ]), Quaternion.identity);
 
         powerup.RemoveAt(random);
         powerdown.RemoveAt(random);

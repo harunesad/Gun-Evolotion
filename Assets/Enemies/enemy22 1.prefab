@@ -964,7 +964,7 @@ GameObject:
   - component: {fileID: 4258674947027690464}
   - component: {fileID: 3555593661924417319}
   - component: {fileID: 328678075541697572}
-  m_Layer: 12
+  m_Layer: 14
   m_Name: future_gun1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -978,15 +978,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4408959916053640846}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0.219}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalRotation: {x: -0.74070126, y: -0.24460043, z: -0.09504627, w: 0.61846465}
+  m_LocalPosition: {x: -0.0163, y: -0.0054, z: 0.2614}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7579784922059131526}
   m_Father: {fileID: 7577575542427003667}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -105.7, y: 36.709, z: -64.76999}
 --- !u!33 &129424161271407505
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -1781,8 +1781,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 50
+  m_fontSizeBase: 50
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1860,7 +1860,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0.06, y: 0.85}
+  m_AnchoredPosition: {x: 0.06, y: 0.8}
   m_SizeDelta: {x: 1.5, y: 1.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &7837091003876172609

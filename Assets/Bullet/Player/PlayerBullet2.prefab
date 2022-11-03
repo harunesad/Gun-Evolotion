@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8213397075225044182}
   - component: {fileID: 9089154445535219915}
   - component: {fileID: 384100964733539365}
-  m_Layer: 10
+  m_Layer: 7
   m_Name: PlayerBullet2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -111,4 +111,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletSpeed: 25
-  spawnSpeed: 0.9
+  attack: 1

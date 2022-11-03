@@ -12,6 +12,7 @@ public class FirstGunSpawn : MonoBehaviour
     public List<Sprite> gunSprites;
     public List<Material> materials;
     public Image gunBar;
+    public TextMeshProUGUI percentText;
     public GameObject spawnPoint;
     public GameObject firstGunObj;
     public int startIndex;
@@ -47,7 +48,8 @@ public class FirstGunSpawn : MonoBehaviour
     {
         gunBar.sprite = gunSprites[startIndex];
         gunBar.DOFillAmount(next / 100, 0.4f);
-        SpawnUpgrade.upgrade.so.progressId[startIndex + 1] += 9;
+        percentText.text = "% " + next;
+        SpawnUpgrade.upgrade.so.progressId[startIndex + 1] += 1;
         next = SpawnUpgrade.upgrade.so.progressId[startIndex + 1] * 10;
         Debug.Log(next);
         if (next == 100)

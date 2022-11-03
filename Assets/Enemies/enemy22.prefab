@@ -965,7 +965,7 @@ GameObject:
   - component: {fileID: 339199675810310576}
   - component: {fileID: 7940124480011173548}
   - component: {fileID: 1107057666536881274}
-  m_Layer: 12
+  m_Layer: 14
   m_Name: Crossbow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -979,15 +979,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4904771722442976738}
-  m_LocalRotation: {x: -0.00000008009374, y: -2.7121333e-12, z: -2.8553952e-12, w: 1}
-  m_LocalPosition: {x: 0.000003475326, y: 0.000000037252903, z: 0.21900076}
+  m_LocalRotation: {x: -0.16405658, y: -0.29737023, z: 0.23378934, w: 0.9110428}
+  m_LocalPosition: {x: -0.1251, y: 0.0366, z: 0.3639}
   m_LocalScale: {x: 1, y: 1.0000002, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5528238999644379907}
   m_Father: {fileID: 7577575542427003667}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -9.2, y: -38.8, z: 32.031}
 --- !u!33 &8715930776566724861
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -1070,6 +1070,7 @@ MonoBehaviour:
   enemyAnim: {fileID: 135528837401187208}
   enemySpawn: {fileID: 7837091002708750819}
   rotX: 0
+  rotate: 0
 --- !u!114 &1107057666536881274
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1780,8 +1781,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 50
+  m_fontSizeBase: 50
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1859,7 +1860,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0.06, y: 0.85}
+  m_AnchoredPosition: {x: 0.06, y: 0.8}
   m_SizeDelta: {x: 1.5, y: 1.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &7837091003876172609

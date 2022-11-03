@@ -25,11 +25,11 @@ public class SpawnUpgrade : MonoBehaviour
 
         //playerState = FirstGunSpawn.first.guns[FirstGunSpawn.first.startIndex].GetComponent<PlayerStateManager>();
         gunProperties = FirstGunSpawn.first.firstGunObj.GetComponent<GunProperties>();
-        cashCostText.text = "" + so.cashId * 10;
+        cashCostText.text = "" + so.cashId * 10 + " $";
         cashlevelText.text = "" + so.cashId;
-        rangeCostText.text = "" + so.rangeId[FirstGunSpawn.first.startIndex] * 10;
+        rangeCostText.text = "" + so.rangeId[FirstGunSpawn.first.startIndex] * 10 + " $";
         rangeLevelText.text = "" + so.rangeId[FirstGunSpawn.first.startIndex];
-        rateFireCostText.text = "" + so.rateFireId[FirstGunSpawn.first.startIndex] * 10;
+        rateFireCostText.text = "" + so.rateFireId[FirstGunSpawn.first.startIndex] * 10 + " $";
         rateFireLevelText.text = "" + so.rateFireId[FirstGunSpawn.first.startIndex];
         NewRateFire();
         //BoxCollider firstGun = FindObjectOfType<PlayerStateManager>().GetComponent<BoxCollider>();
@@ -49,12 +49,12 @@ public class SpawnUpgrade : MonoBehaviour
         {
             Collect.collect.cash -= cash.cashCost;
             PlayerPrefs.SetInt("Cash", Collect.collect.cash);
-            Collect.collect.cashText.text = "" + PlayerPrefs.GetInt("Cash");
+            Collect.collect.cashText.text = "" + PlayerPrefs.GetInt("Cash") + " $";
             so.cashId++;
             cash.cashLevel = so.cashId;
             cashlevelText.text = "" + cash.cashLevel;
             cash.cashCost = so.cashId * 10;
-            cashCostText.text = "" + cash.cashCost;
+            cashCostText.text = "" + cash.cashCost + " $";
             Collect.collect.cashInc += 1;
             PlayerPrefs.SetInt("CashInc", Collect.collect.cashInc);
             SaveManager.Save(so);
@@ -67,14 +67,14 @@ public class SpawnUpgrade : MonoBehaviour
         {
             Collect.collect.cash -= gunProperties.rangeCost;
             PlayerPrefs.SetInt("Cash", Collect.collect.cash);
-            Collect.collect.cashText.text = "" + PlayerPrefs.GetInt("Cash");
+            Collect.collect.cashText.text = "" + PlayerPrefs.GetInt("Cash") + " $";
             BoxCollider firstGun = FindObjectOfType<PlayerStateManager>().GetComponent<BoxCollider>();
             firstGun.size = new Vector3(firstGun.size.x, firstGun.size.y, firstGun.size.z + (so.rangeId[FirstGunSpawn.first.startIndex] / 10f));
             so.rangeId[FirstGunSpawn.first.startIndex]++;
             gunProperties.rangeLevel = so.rangeId[FirstGunSpawn.first.startIndex];
             rangeLevelText.text = "" + gunProperties.rangeLevel;
             gunProperties.rangeCost = so.rangeId[FirstGunSpawn.first.startIndex] * 10;
-            rangeCostText.text = "" + gunProperties.rangeCost;
+            rangeCostText.text = "" + gunProperties.rangeCost + " $";
             SaveManager.Save(so);
             Collect.collect.StartGame();
         }
@@ -85,13 +85,13 @@ public class SpawnUpgrade : MonoBehaviour
         {
             Collect.collect.cash -= gunProperties.rateFireCost;
             PlayerPrefs.SetInt("Cash", Collect.collect.cash);
-            Collect.collect.cashText.text = "" + PlayerPrefs.GetInt("Cash");
+            Collect.collect.cashText.text = "" + PlayerPrefs.GetInt("Cash") + " $";
             gunProperties.spawnSpeed /= Mathf.Pow(1.1f, so.rateFireId[FirstGunSpawn.first.startIndex]);
             so.rateFireId[FirstGunSpawn.first.startIndex]++;
             gunProperties.rateFireLevel = so.rateFireId[FirstGunSpawn.first.startIndex];
             rateFireLevelText.text = "" + gunProperties.rateFireLevel;
             gunProperties.rateFireCost = so.rateFireId[FirstGunSpawn.first.startIndex] * 10;
-            rateFireCostText.text = "" + gunProperties.rateFireCost;
+            rateFireCostText.text = "" + gunProperties.rateFireCost + " $";
             SaveManager.Save(so);
             Collect.collect.StartGame();
         }

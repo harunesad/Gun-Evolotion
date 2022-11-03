@@ -25,11 +25,11 @@ public class Collect : MonoBehaviour
         if (PlayerPrefs.HasKey("Cash"))
         {
             cash = PlayerPrefs.GetInt("Cash");
-            cashText.text = "" + cash;
+            cashText.text = "" + cash + " $";
         }
         else
         {
-            cashText.text = "" + cash;
+            cashText.text = "" + cash + " $";
         }
     }
     public void StartGame()
@@ -48,7 +48,7 @@ public class Collect : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.layer == 12)
+        if(other.gameObject.layer == 12 && other.GetComponent<EnemyStateManager>().needKillBullet == 0)
         {
             for (int i = 0; i < FirstGunSpawn.first.guns.Count; i++)
             {
@@ -76,7 +76,7 @@ public class Collect : MonoBehaviour
             cash += cashInc;
             PlayerPrefs.SetInt("Cash", cash);
             cash = PlayerPrefs.GetInt("Cash");
-            cashText.text = "" + PlayerPrefs.GetInt("Cash");
+            cashText.text = "" + PlayerPrefs.GetInt("Cash") +" $";
             Destroy(other.gameObject);
         }
     }    

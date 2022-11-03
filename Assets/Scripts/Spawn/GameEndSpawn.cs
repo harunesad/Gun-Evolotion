@@ -10,9 +10,9 @@ public class GameEndSpawn : MonoBehaviour
     {
         for (int i = 0; i < 20; i++)
         {
-            var cashLeft = Instantiate(enemyCash, new Vector3(-2.5f, 0.5f, 2 * i + 5), Quaternion.identity);
-            var cashMiddle = Instantiate(enemyCash, new Vector3(0, 0.5f, 2 * i + 5), Quaternion.identity);
-            var cashRight = Instantiate(enemyCash, new Vector3(2.5f, 0.5f, 2 * i + 5), Quaternion.identity);
+            var cashLeft = Instantiate(enemyCash, new Vector3(-2.5f, 0.5f, 2 * i + 5), enemyCash.transform.rotation);
+            var cashMiddle = Instantiate(enemyCash, new Vector3(0, 0.5f, 2 * i + 5), enemyCash.transform.rotation);
+            var cashRight = Instantiate(enemyCash, new Vector3(2.5f, 0.5f, 2 * i + 5), enemyCash.transform.rotation);
 
             TextUpgrade(cashLeft, i);
             TextUpgrade(cashMiddle, i);
@@ -26,11 +26,16 @@ public class GameEndSpawn : MonoBehaviour
     void TextUpgrade(GameObject obj, int i)
     {
         GameObject parent = obj.transform.GetChild(0).gameObject;
-        GameObject cash = parent.transform.GetChild(0).gameObject;
-        int needKillCount = cash.GetComponent<EnemyStateManager>().needKillBullet;
+        for (int j = 0; j < 7; j++)
+        {
+             parent = parent.transform.GetChild(0).gameObject;
+            Debug.Log(parent.name);
+        }
+        //GameObject cash = parent.transform.GetChild(0).gameObject;
+        int needKillCount = parent.GetComponent<EnemyStateManager>().needKillBullet;
         needKillCount = i * 5 + 3 * (GameEnd.end.levelNumber + 1);
-        cash.GetComponent<EnemyStateManager>().needKillBullet = needKillCount;
-        cash.GetComponent<EnemyStateManager>().needKillBulletText.text = "" + needKillCount;
+        parent.GetComponent<EnemyStateManager>().needKillBullet = needKillCount;
+        parent.GetComponent<EnemyStateManager>().needKillBulletText.text = "" + needKillCount;
     }
     void Update()
     {
