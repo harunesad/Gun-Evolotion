@@ -10,17 +10,34 @@ public class GameEndSpawn : MonoBehaviour
     {
         for (int i = 0; i < 20; i++)
         {
-            var cashLeft = Instantiate(enemyCash, new Vector3(-2.5f, 0.5f, 2 * i + 5), enemyCash.transform.rotation);
-            var cashMiddle = Instantiate(enemyCash, new Vector3(0, 0.5f, 2 * i + 5), enemyCash.transform.rotation);
-            var cashRight = Instantiate(enemyCash, new Vector3(2.5f, 0.5f, 2 * i + 5), enemyCash.transform.rotation);
+            if (i == 0)
+            {
+                var cashLeft = Instantiate(enemyCash, new Vector3(-2.5f, 0.5f, 2 * i), enemyCash.transform.rotation);
+                var cashMiddle = Instantiate(enemyCash, new Vector3(0, 0.5f, 2 * i), enemyCash.transform.rotation);
+                var cashRight = Instantiate(enemyCash, new Vector3(2.5f, 0.5f, 2 * i), enemyCash.transform.rotation);
 
-            TextUpgrade(cashLeft, i);
-            TextUpgrade(cashMiddle, i);
-            TextUpgrade(cashRight, i);
+                TextUpgrade(cashLeft, i);
+                TextUpgrade(cashMiddle, i);
+                TextUpgrade(cashRight, i);
 
-            cashLeft.name = enemyCash.name;
-            cashMiddle.name = enemyCash.name;
-            cashRight.name = enemyCash.name;
+                cashLeft.name = enemyCash.name;
+                cashMiddle.name = enemyCash.name;
+                cashRight.name = enemyCash.name;
+            }
+            else
+            {
+                var cashLeft = Instantiate(enemyCash, new Vector3(-2.5f, 0.5f, 2 * i + 5), enemyCash.transform.rotation);
+                var cashMiddle = Instantiate(enemyCash, new Vector3(0, 0.5f, 2 * i + 5), enemyCash.transform.rotation);
+                var cashRight = Instantiate(enemyCash, new Vector3(2.5f, 0.5f, 2 * i + 5), enemyCash.transform.rotation);
+
+                TextUpgrade(cashLeft, i);
+                TextUpgrade(cashMiddle, i);
+                TextUpgrade(cashRight, i);
+
+                cashLeft.name = enemyCash.name;
+                cashMiddle.name = enemyCash.name;
+                cashRight.name = enemyCash.name;
+            }
         }
     }
     void TextUpgrade(GameObject obj, int i)

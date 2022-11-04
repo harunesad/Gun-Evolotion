@@ -4,6 +4,7 @@ using UnityEngine;
 using TMPro;
 public class RateFire : MonoBehaviour
 {
+    PlayerStateManager playerState;
     public float rateFireMultiplier;
     [SerializeField] string result;
     void Start()
@@ -11,6 +12,7 @@ public class RateFire : MonoBehaviour
         GameObject canvas = gameObject.transform.GetChild(0).gameObject;
         TextMeshProUGUI rateFireText = canvas.transform.GetChild(1).GetComponent<TextMeshProUGUI>();
         rateFireText.text = "" + result;
+        playerState = FindObjectOfType<PlayerStateManager>();
         //if (rateFireMultiplier >= 1)
         //{
         //    gameObject.GetComponent<Renderer>().material.color = new Color(0.2f, 0.9f, 0.2f, 0.4f);
@@ -38,5 +40,6 @@ public class RateFire : MonoBehaviour
     {
         GunProperties gunProperties = FirstGunSpawn.first.firstGunObj.GetComponent<GunProperties>();
         gunProperties.spawnSpeed += rateFireMultiplier;
+        playerState.spawnSpeed = gunProperties.spawnSpeed;
     }
 }

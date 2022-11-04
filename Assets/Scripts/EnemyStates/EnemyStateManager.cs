@@ -5,7 +5,7 @@ using TMPro;
 
 public class EnemyStateManager : MonoBehaviour
 {
-    public float bulletSpeed;
+    //public float bulletSpeed;
     public float spawnSpeed;
     public int needKillBullet;
     public TextMeshProUGUI needKillBulletText;

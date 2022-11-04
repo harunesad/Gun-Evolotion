@@ -27,8 +27,16 @@ public class PlayerBulletAttack : MonoBehaviour
         TextMeshProUGUI needKillText = parent.GetComponent<EnemyStateManager>().needKillBulletText;
         needKillCount -= attack;
         needKillText.text = "" + needKillCount;
-        parent.GetComponent<EnemyStateManager>().needKillBullet = needKillCount;
-        parent.GetComponent<EnemyStateManager>().needKillBulletText = needKillText;
+        if (needKillCount >= 0)
+        {
+            parent.GetComponent<EnemyStateManager>().needKillBullet = needKillCount;
+            parent.GetComponent<EnemyStateManager>().needKillBulletText = needKillText;
+        }
+        else
+        {
+            parent.GetComponent<EnemyStateManager>().needKillBullet = 0;
+            parent.GetComponent<EnemyStateManager>().needKillBulletText.text = "0";
+        }
         Vector3 scale = new Vector3(other.transform.localScale.x, other.transform.localScale.y, other.transform.localScale.z);
         other.transform.DOScale(scale * 1.1f, 0.1f).OnComplete(() => 
         {

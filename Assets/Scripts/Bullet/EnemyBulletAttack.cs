@@ -16,7 +16,14 @@ public class EnemyBulletAttack : MonoBehaviour
         float lifeBarFillAmount = FindObjectOfType<PlayerStateManager>().lifeBar.fillAmount;
         Debug.Log(FindObjectOfType<PlayerStateManager>().lifeBar.fillAmount);
         lifeBarFillAmount -= attack / 10;
-        FindObjectOfType<PlayerStateManager>().lifeBar.fillAmount = lifeBarFillAmount;
+        if (lifeBarFillAmount >= 0)
+        {
+            FindObjectOfType<PlayerStateManager>().lifeBar.fillAmount = lifeBarFillAmount;
+        }
+        else
+        {
+            FindObjectOfType<PlayerStateManager>().lifeBar.fillAmount = 0;
+        }
         Destroy(gameObject);
     }
 }

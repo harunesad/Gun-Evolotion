@@ -37,7 +37,7 @@ public class FirstGunSpawn : MonoBehaviour
         next = SpawnUpgrade.upgrade.so.progressId[startIndex + 1] * 10;
         Debug.Log(next);
         gunBar.fillAmount = current / 100;
-        //RenderSettings.skybox = materials[(int)Mathf.Round((startIndex + 1) / 5)];
+        RenderSettings.skybox = materials[(int)Mathf.Round((startIndex + 1) / 5)];
     }
     public void NewDistance()
     {

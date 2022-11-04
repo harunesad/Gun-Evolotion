@@ -1063,9 +1063,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dff1f0527c4aca143a5afce865fb3f05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletSpeed: 5
   spawnSpeed: 1
-  needKillBullet: 1
+  needKillBullet: 2
   needKillBulletText: {fileID: 7837091003138401328}
   enemyAnim: {fileID: 135528837401187208}
   enemySpawn: {fileID: 7837091002708750819}
@@ -1084,7 +1083,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerStateManager: {fileID: 0}
-  spawnBullet: {fileID: 4419210106269724278, guid: 70ced063034fdfe4daa0111166526925, type: 3}
+  spawnBullet: {fileID: 5296204987309959272, guid: 01f58ce2a4f89d2448358e3a7e6ed3a7, type: 3}
   spawnPoint: {fileID: 0}
 --- !u!1 &5101389938735648782
 GameObject:
