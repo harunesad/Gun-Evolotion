@@ -20,7 +20,7 @@ public class GameEnd : MonoBehaviour
         {
             levelNumber = PlayerPrefs.GetInt("Level");
         }
-        levelText.text = "" + (levelNumber + 1);
+        levelText.text = "LEVEL " + (levelNumber + 1);
     }
     void Update()
     {
@@ -90,7 +90,7 @@ public class GameEnd : MonoBehaviour
     }
     void LevelText()
     {
-        levelText.text = "" + (levelNumber + 1);
+        levelText.text = "LEVEL " + (levelNumber + 1);
     }
     public void Exit()
     {

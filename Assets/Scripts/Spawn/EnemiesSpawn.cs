@@ -9,9 +9,23 @@ public class EnemiesSpawn : MonoBehaviour
     public List<float> posZ;
     void Start()
     {
-        for (int i = 0; i < posZ.Count; i++)
+        //for (int i = 0; i < posZ.Count; i++)
+        //{
+        //    RandomEnemies(i);
+        //}
+        int count = posZ.Count - (enemies.Count - FirstGunSpawn.first.startIndex);
+        for (int k = 0; k < count; k++)
         {
-            RandomEnemies(i);
+            int random = Random.Range(0, posZ.Count);
+            Instantiate(enemiesCash[0], new Vector3(Random.Range(-2, 2), 0, posZ[random]), enemiesCash[0].transform.rotation);
+            posZ.RemoveAt(random);
+        }
+        for (int j = FirstGunSpawn.first.startIndex; j < enemies.Count; j++)
+        {
+            //int random = Random.Range(0, posZ.Count);
+            Instantiate(enemies[j], new Vector3(Random.Range(-2, 2), 0, posZ[j]), enemies[j].transform.rotation);
+            //enemies.RemoveAt(j);
+            //posZ.RemoveAt(random);
         }
     }
     void RandomEnemies(int z)

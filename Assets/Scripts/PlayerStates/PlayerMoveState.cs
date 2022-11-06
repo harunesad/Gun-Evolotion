@@ -8,10 +8,7 @@ public class PlayerMoveState : PlayerBaseState
     public override void EnterState(PlayerStateManager player)
     {
         SpawnUpgrade.upgrade.NewRateFire();
-        Debug.Log(player.gameObject.name);
         player.lifeBar = GameObject.Find("LifeBar").GetComponent<Image>();
-        Debug.Log(player.spawnSpeed);
-        Debug.Log(player.firstGun.firstGunObj.GetComponent<GunProperties>().spawnSpeed);
         //BoxCollider playerCol = player.gameObject.GetComponent<BoxCollider>();
 
         //playerCol.size = new Vector3(playerCol.size.x, playerCol.size.y, player.firstGun.firstGunObj.GetComponent<GunProperties>().range);

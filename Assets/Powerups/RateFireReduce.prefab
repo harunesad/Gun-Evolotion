@@ -435,7 +435,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 613118097963c37468991a1bc7f7da63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rateFireMultiplier: 0.1
+  rateFireMultiplier: 0.05
   result: '-'
 --- !u!1 &5141797209871031407
 GameObject:

@@ -2,10 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class EnemyStateManager : MonoBehaviour
 {
     //public float bulletSpeed;
+    public GameObject parent;
     public float spawnSpeed;
     public int needKillBullet;
     public TextMeshProUGUI needKillBulletText;

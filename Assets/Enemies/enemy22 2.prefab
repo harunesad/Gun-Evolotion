@@ -1553,6 +1553,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stateManager: {fileID: 1464013162545997335}
+  spawn: {fileID: 2986193170346448313}
 --- !u!1 &7837091003138401330
 GameObject:
   m_ObjectHideFlags: 0
@@ -1965,6 +1966,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dff1f0527c4aca143a5afce865fb3f05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  parent: {fileID: 135528837401187209}
   spawnSpeed: 0.8
   needKillBullet: 4
   needKillBulletText: {fileID: 7837091003138401328}

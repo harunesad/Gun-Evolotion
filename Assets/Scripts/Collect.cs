@@ -29,6 +29,7 @@ public class Collect : MonoBehaviour
         }
         else
         {
+            PlayerPrefs.SetInt("Cash", cash);
             cashText.text = "" + cash + " $";
         }
     }
@@ -48,7 +49,9 @@ public class Collect : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.layer == 12 && other.GetComponent<EnemyStateManager>().needKillBullet == 0)
+        EnemyStateManager enemyStateManager = other.GetComponent<EnemyStateManager>();
+        PlayerStateManager playerStateManager = FindObjectOfType<PlayerStateManager>();
+        if(other.gameObject.layer == 12 && enemyStateManager.needKillBullet == 0 && playerStateManager != null)
         {
             for (int i = 0; i < FirstGunSpawn.first.guns.Count; i++)
             {
@@ -71,7 +74,7 @@ public class Collect : MonoBehaviour
             SpawnUpgrade.upgrade.NewRateFire();
             Destroy(other.gameObject);
         }
-        if (other.gameObject.layer == 13 && other.GetComponent<EnemyStateManager>().needKillBullet == 0)
+        if (other.gameObject.layer == 13 && enemyStateManager.needKillBullet == 0 && playerStateManager != null)
         {
             cash += cashInc;
             PlayerPrefs.SetInt("Cash", cash);

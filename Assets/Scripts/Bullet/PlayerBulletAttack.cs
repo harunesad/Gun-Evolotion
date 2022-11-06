@@ -19,7 +19,10 @@ public class PlayerBulletAttack : MonoBehaviour
         parent = other.transform.GetChild(0);
         for (int i = 0; i < 7; i++)
         {
-            parent = parent.transform.GetChild(0);
+            if (parent.GetComponent<EnemyStateManager>() == null)
+            {
+                parent = parent.transform.GetChild(0);
+            }
         }
         Debug.Log(parent.name);
         //GameObject triggerObj = parent.GetChild(0).gameObject;

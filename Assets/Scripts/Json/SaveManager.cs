@@ -11,7 +11,6 @@ public static class SaveManager
     public static void Save(SaveObject so)
     {
         string dir= Application.dataPath + directory;
-        Debug.Log(dir);
 
         if (!Directory.Exists(dir))
         {
