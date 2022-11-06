@@ -7,6 +7,7 @@ using TMPro;
 public class GameEndSpawn : MonoBehaviour
 {
     public float count;
+    public float progress;
     public GameObject enemyCash;
     public GameObject player;
     public Image endGameBar;
@@ -25,6 +26,10 @@ public class GameEndSpawn : MonoBehaviour
                 TextUpgrade(cashMiddle, i);
                 TextUpgrade(cashRight, i);
 
+                ScaleInc(cashLeft);
+                ScaleInc(cashMiddle);
+                ScaleInc(cashRight);
+
                 cashLeft.name = enemyCash.name;
                 cashMiddle.name = enemyCash.name;
                 cashRight.name = enemyCash.name;
@@ -35,9 +40,14 @@ public class GameEndSpawn : MonoBehaviour
                 var cashMiddle = Instantiate(enemyCash, new Vector3(0, 0.5f, 2 * i + 5), enemyCash.transform.rotation);
                 var cashRight = Instantiate(enemyCash, new Vector3(2.5f, 0.5f, 2 * i + 5), enemyCash.transform.rotation);
                 count += 3;
+
                 TextUpgrade(cashLeft, i);
                 TextUpgrade(cashMiddle, i);
                 TextUpgrade(cashRight, i);
+
+                ScaleInc(cashLeft);
+                ScaleInc(cashMiddle);
+                ScaleInc(cashRight);
 
                 cashLeft.name = enemyCash.name;
                 cashMiddle.name = enemyCash.name;
@@ -57,6 +67,10 @@ public class GameEndSpawn : MonoBehaviour
         needKillCount = i * 5 + 3 * (GameEnd.end.levelNumber + 1);
         parent.GetComponent<EnemyStateManager>().needKillBullet = needKillCount;
         parent.GetComponent<EnemyStateManager>().needKillBulletText.text = "" + needKillCount;
+    }
+    void ScaleInc(GameObject obj)
+    {
+        obj.transform.localScale = new Vector3(5, 5, 5);
     }
     void Update()
     {

@@ -6,7 +6,6 @@ using DG.Tweening;
 public class EnemyDieState : EnemyBaseState
 {
     GameEndSpawn gameEnd;
-    float progress;
     public override void EnterState(EnemyStateManager enemy)
     {
         gameEnd = GameObject.FindObjectOfType<GameEndSpawn>();
@@ -20,14 +19,14 @@ public class EnemyDieState : EnemyBaseState
         //GameObject parent = enemy.gameObject.transform.parent.gameObject;
 
         //GameObject enemySoldier = parent.transform.parent.gameObject;
-        progress++;
         if (enemy.gameObject.layer == 14)
         {
             enemy.gameObject.layer = 12;
         }
         if (enemy.gameObject.transform.position.z > 2)
         {
-            gameEnd.endGameBarProgress.DOFillAmount(progress / gameEnd.count, 1);
+            gameEnd.progress++;
+            gameEnd.endGameBarProgress.DOFillAmount(gameEnd.progress / gameEnd.count, 1);
         }
         enemy.parent.layer = 0;
         enemy.gameObject.transform.parent = null;

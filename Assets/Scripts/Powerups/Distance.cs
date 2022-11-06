@@ -23,7 +23,7 @@ public class Distance : MonoBehaviour
         //}
         if (result == "+")
         {
-            gameObject.GetComponent<Renderer>().material.color = new Color(0.2f, 0.9f, 0.2f, 0.4f);
+            gameObject.GetComponent<Renderer>().material.color = new Color(0.3f, 0.3f, 0.9f, 0.4f);
         }
         if (result == "-")
         {

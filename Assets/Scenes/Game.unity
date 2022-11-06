@@ -1991,8 +1991,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -162.5}
-  m_SizeDelta: {x: 0, y: -325}
+  m_AnchoredPosition: {x: 0, y: -200}
+  m_SizeDelta: {x: 0, y: -400}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &431144307
 MonoBehaviour:
@@ -3206,7 +3206,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 50, y: 400}
   m_SizeDelta: {x: 400, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &801009756
@@ -3238,8 +3238,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4284637935
+  m_fontColor: {r: 0.9372549, g: 0.38431373, b: 0.38431373, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -3715,7 +3715,7 @@ Transform:
   m_GameObject: {fileID: 935702732}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 15, y: 1, z: 1}
+  m_LocalScale: {x: 15, y: 1, z: 0.8}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -3811,14 +3811,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.2751232, y: -0.058683686, z: 0.016827272, w: 0.9594688}
-  m_LocalPosition: {x: 1, y: 4, z: -75}
+  m_LocalRotation: {x: 0.24133258, y: -0.067684405, z: 0.016875615, w: 0.96793216}
+  m_LocalPosition: {x: 1, y: 6, z: -76.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 32, y: -7, z: 0}
+  m_LocalEulerAnglesHint: {x: 28, y: -8, z: 0}
 --- !u!114 &963194229
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3831,7 +3831,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f967cf725427ff64484655c7640afe1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  offset: {x: 1, y: 4, z: -5}
+  offset: {x: 1, y: 6, z: -6.5}
   player: {fileID: 3759450577551575633}
   followSpeed: 5
 --- !u!1 &971678904
@@ -5365,8 +5365,8 @@ MonoBehaviour:
   - {fileID: 6253064722488657786, guid: e6396a5df0c079741802207f280d2067, type: 3}
   - {fileID: 5141797209338660225, guid: 4395db827236f164181b52f573f71207, type: 3}
   posX:
-  - -2.5
-  - 2.5
+  - -2
+  - 2
   posZ:
   - -40
   - -25
@@ -7620,6 +7620,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   count: 0
+  progress: 0
   enemyCash: {fileID: 1123436122099266891, guid: 774c40b9bd4d3784ba0f8221a9424739, type: 3}
   player: {fileID: 4568779558662770923}
   endGameBar: {fileID: 434838215}
