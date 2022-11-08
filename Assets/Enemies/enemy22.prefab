@@ -1065,12 +1065,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parent: {fileID: 135528837401187209}
   spawnSpeed: 1
-  needKillBullet: 2
+  needKillBullet: 1
   needKillBulletText: {fileID: 7837091003138401328}
   enemyAnim: {fileID: 135528837401187208}
   enemySpawn: {fileID: 7837091002708750819}
   rotX: 0
   rotate: 0
+  startLevel: 10
 --- !u!114 &1107057666536881274
 MonoBehaviour:
   m_ObjectHideFlags: 0

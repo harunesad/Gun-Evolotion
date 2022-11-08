@@ -7,6 +7,7 @@ public class EnemyIdleState : EnemyBaseState
     public override void EnterState(EnemyStateManager enemy)
     {
         //enemy.needKillBullet *= (GameEnd.end.levelNumber + 1);
+        enemy.startLevel = enemy.needKillBullet;
         enemy.needKillBulletText.text = "" + enemy.needKillBullet;
     }
 

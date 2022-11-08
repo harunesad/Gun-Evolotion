@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class PlayerStateManager : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class PlayerStateManager : MonoBehaviour
     //public int rateFireCost;
     //public float rateFireLevel;
     public Image lifeBar;
+    public TextMeshProUGUI levelText;
     public GameObject player;
     public FirstGunSpawn firstGun;
 

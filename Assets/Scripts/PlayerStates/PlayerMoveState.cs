@@ -8,6 +8,7 @@ public class PlayerMoveState : PlayerBaseState
     public override void EnterState(PlayerStateManager player)
     {
         SpawnUpgrade.upgrade.NewRateFire();
+        player.levelText.text = "Level " + player.firstGun.firstGunObj.GetComponent<GunProperties>().playerLevel;
         player.lifeBar = GameObject.Find("LifeBar").GetComponent<Image>();
         //BoxCollider playerCol = player.gameObject.GetComponent<BoxCollider>();
 

@@ -14,13 +14,13 @@ public class GameEndSpawn : MonoBehaviour
     public Image endGameBarProgress;
     void Start()
     {
-        for (int i = 0; i < 20; i++)
+        for (int i = 0; i < 40; i+=2)
         {
             if (i == 0)
             {
-                var cashLeft = Instantiate(enemyCash, new Vector3(-2.5f, 0.5f, 2 * i), enemyCash.transform.rotation);
-                var cashMiddle = Instantiate(enemyCash, new Vector3(0, 0.5f, 2 * i), enemyCash.transform.rotation);
-                var cashRight = Instantiate(enemyCash, new Vector3(2.5f, 0.5f, 2 * i), enemyCash.transform.rotation);
+                var cashLeft = Instantiate(enemyCash, new Vector3(-2.5f, 0.5f, 2 * i + 10), enemyCash.transform.rotation);
+                var cashMiddle = Instantiate(enemyCash, new Vector3(0, 0.5f, 2 * i + 10), enemyCash.transform.rotation);
+                var cashRight = Instantiate(enemyCash, new Vector3(2.5f, 0.5f, 2 * i + 10), enemyCash.transform.rotation);
                 count += 3;
                 TextUpgrade(cashLeft, i);
                 TextUpgrade(cashMiddle, i);
@@ -36,9 +36,9 @@ public class GameEndSpawn : MonoBehaviour
             }
             else
             {
-                var cashLeft = Instantiate(enemyCash, new Vector3(-2.5f, 0.5f, 2 * i + 5), enemyCash.transform.rotation);
-                var cashMiddle = Instantiate(enemyCash, new Vector3(0, 0.5f, 2 * i + 5), enemyCash.transform.rotation);
-                var cashRight = Instantiate(enemyCash, new Vector3(2.5f, 0.5f, 2 * i + 5), enemyCash.transform.rotation);
+                var cashLeft = Instantiate(enemyCash, new Vector3(-2.5f, 0.5f, 2 * i + 15), enemyCash.transform.rotation);
+                var cashMiddle = Instantiate(enemyCash, new Vector3(0, 0.5f, 2 * i + 15), enemyCash.transform.rotation);
+                var cashRight = Instantiate(enemyCash, new Vector3(2.5f, 0.5f, 2 * i + 15), enemyCash.transform.rotation);
                 count += 3;
 
                 TextUpgrade(cashLeft, i);

@@ -15,6 +15,7 @@ public class EnemyStateManager : MonoBehaviour
     public EnemySpawn enemySpawn;
     public float rotX;
     public int rotate;
+    public int startLevel;
 
     EnemyBaseState currentState;
     public EnemyIdleState IdleState = new EnemyIdleState();

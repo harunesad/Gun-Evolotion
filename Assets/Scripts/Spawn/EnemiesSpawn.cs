@@ -14,13 +14,13 @@ public class EnemiesSpawn : MonoBehaviour
         //    RandomEnemies(i);
         //}
         int count = posZ.Count - (enemies.Count - FirstGunSpawn.first.startIndex);
-        for (int k = 0; k < count; k++)
+        for (int k = 0; k < 3; k++)
         {
             int random = Random.Range(0, posZ.Count);
             Instantiate(enemiesCash[0], new Vector3(Random.Range(-2, 2), 0, posZ[random]), enemiesCash[0].transform.rotation);
             posZ.RemoveAt(random);
         }
-        for (int j = FirstGunSpawn.first.startIndex; j < enemies.Count; j++)
+        for (int j = FirstGunSpawn.first.startIndex; j < FirstGunSpawn.first.startIndex + 3; j++)
         {
             //int random = Random.Range(0, posZ.Count);
             Instantiate(enemies[j], new Vector3(Random.Range(-2, 2), 0, posZ[j]), enemies[j].transform.rotation);
