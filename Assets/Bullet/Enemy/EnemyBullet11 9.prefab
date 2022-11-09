@@ -177,4 +177,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletSpeed: 25
-  attack: 1
+  attack: 10

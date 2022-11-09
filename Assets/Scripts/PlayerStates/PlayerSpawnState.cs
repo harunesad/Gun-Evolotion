@@ -27,7 +27,11 @@ public class PlayerSpawnState : PlayerBaseState
 
     public override void UpdateState(PlayerStateManager player)
     {
-        if (player.lifeBar.fillAmount == 0)
+        //if (player.lifeBar.fillAmount == 0)
+        //{
+        //    player.SwitchState(player.DieState);
+        //}
+        if (FirstGunSpawn.first.firstGunObj.GetComponent<GunProperties>().playerLevel == 0)
         {
             player.SwitchState(player.DieState);
         }

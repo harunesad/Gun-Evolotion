@@ -72,6 +72,7 @@ public class Collect : MonoBehaviour
             //gun.transform.parent = spawnPoint.transform;
             FirstGunSpawn.first.NewDistance();
             SpawnUpgrade.upgrade.NewRateFire();
+            playerStateManager.levelText.text = "Level " + collectedGuns.GetComponent<GunProperties>().playerLevel;
             Destroy(other.gameObject);
         }
         if (other.gameObject.layer == 13 && enemyStateManager.needKillBullet == 0 && playerStateManager != null)

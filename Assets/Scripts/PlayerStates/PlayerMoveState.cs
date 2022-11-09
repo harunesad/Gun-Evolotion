@@ -9,7 +9,7 @@ public class PlayerMoveState : PlayerBaseState
     {
         SpawnUpgrade.upgrade.NewRateFire();
         player.levelText.text = "Level " + player.firstGun.firstGunObj.GetComponent<GunProperties>().playerLevel;
-        player.lifeBar = GameObject.Find("LifeBar").GetComponent<Image>();
+        //player.lifeBar = GameObject.Find("LifeBar").GetComponent<Image>();
         //BoxCollider playerCol = player.gameObject.GetComponent<BoxCollider>();
 
         //playerCol.size = new Vector3(playerCol.size.x, playerCol.size.y, player.firstGun.firstGunObj.GetComponent<GunProperties>().range);
@@ -28,7 +28,11 @@ public class PlayerMoveState : PlayerBaseState
 
     public override void UpdateState(PlayerStateManager player)
     {
-        if (player.lifeBar.fillAmount == 0)
+        //if (player.lifeBar.fillAmount == 0)
+        //{
+        //    player.SwitchState(player.DieState);
+        //}
+        if (FirstGunSpawn.first.firstGunObj.GetComponent<GunProperties>().playerLevel == 0)
         {
             player.SwitchState(player.DieState);
         }

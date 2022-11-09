@@ -55,6 +55,7 @@ public class GameEnd : MonoBehaviour
         nextStage.SetActive(true);
         FirstGunSpawn.first.ProgressBar();
         //stateManager.CancelInvoke();
+        Destroy(FindObjectOfType<PlayerStateManager>().levelText.gameObject);
         Destroy(FindObjectOfType<PlayerStateManager>().GetComponent<PlayerStateManager>());
         Destroy(FindObjectOfType<SpawnPlayerBullet>().GetComponent<SpawnPlayerBullet>());
         Collect.collect.isStart = false;
@@ -67,6 +68,7 @@ public class GameEnd : MonoBehaviour
         //EnemyStateManager enemyState = collision.transform.Find("SpawnPoint").GetComponent<EnemyStateManager>();
         gameOver.SetActive(true);
         //stateManager.CancelInvoke();
+        Destroy(FindObjectOfType<PlayerStateManager>().levelText.gameObject);
         Destroy(FindObjectOfType<PlayerStateManager>().GetComponent<PlayerStateManager>());
         Destroy(FindObjectOfType<SpawnPlayerBullet>().GetComponent<SpawnPlayerBullet>());
         Collect.collect.EndGame();

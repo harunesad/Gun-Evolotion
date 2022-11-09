@@ -43,6 +43,8 @@ public class EnemyDieState : EnemyBaseState
         Object.Destroy(enemy.parent.GetComponent<CapsuleCollider>());
         Object.Destroy(enemy.enemySpawn);
         Object.Destroy(enemy.parent, 2);
+        Object.Destroy(enemy.levelText);
+        Object.Destroy(enemy.needKillBulletText);
         Object.Destroy(enemy.parent.transform.GetChild(2).gameObject, 0.1f);
 
         PlayerStateManager playerState = Object.FindObjectOfType<PlayerStateManager>();

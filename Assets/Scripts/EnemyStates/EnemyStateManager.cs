@@ -11,11 +11,13 @@ public class EnemyStateManager : MonoBehaviour
     public float spawnSpeed;
     public int needKillBullet;
     public TextMeshProUGUI needKillBulletText;
+    public TextMeshProUGUI levelText;
     public Animator enemyAnim;
     public EnemySpawn enemySpawn;
     public float rotX;
     public int rotate;
-    public int startLevel;
+    public int enemyLevel;
+    //public int startLevel;
 
     EnemyBaseState currentState;
     public EnemyIdleState IdleState = new EnemyIdleState();

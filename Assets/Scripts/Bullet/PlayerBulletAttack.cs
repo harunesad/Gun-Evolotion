@@ -9,6 +9,19 @@ public class PlayerBulletAttack : MonoBehaviour
     public float bulletSpeed;
     public int attack;
     Transform parent;
+    private void Start()
+    {
+        parent = EnemiesSpawn.enemiesSpawn.strongEnemy.transform.GetChild(0);
+        for (int i = 0; i < 7; i++)
+        {
+            if (parent.GetComponent<EnemyStateManager>() == null)
+            {
+                parent = parent.transform.GetChild(0);
+            }
+        }
+        attack = (int)Mathf.Round(parent.GetComponent<EnemyStateManager>().needKillBullet / 5) + 1;
+        Debug.Log(parent.GetComponent<EnemyStateManager>().needKillBullet);
+    }
     void Update()
     {
         transform.Translate(Vector3.forward * Time.deltaTime * bulletSpeed);
