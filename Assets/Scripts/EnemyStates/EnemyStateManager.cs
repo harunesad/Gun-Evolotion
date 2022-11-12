@@ -27,7 +27,7 @@ public class EnemyStateManager : MonoBehaviour
     public EnemyRotatePozitiveState RotatePozitiveState = new EnemyRotatePozitiveState();
     void Start()
     {
-        needKillBullet *= (GameEnd.end.levelNumber + 1);
+        //needKillBullet *= (GameEnd.end.levelNumber + 1);
         currentState = IdleState;
         currentState.EnterState(this);
     }

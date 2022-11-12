@@ -761,7 +761,7 @@ MonoBehaviour:
   startPanel: {fileID: 431144305}
   cashText: {fileID: 1164988405}
   playerAnim: {fileID: 4568779558662770927}
-  cash: 100
+  cash: 0
   cashInc: 10
   isStart: 0
 --- !u!65 &202192936
@@ -1349,14 +1349,30 @@ MonoBehaviour:
   - {fileID: 6329981631715412719}
   - {fileID: 2950975603520986032}
   gunSprites:
-  - {fileID: 21300000, guid: f7ae8799e7c214646951bbb5aa1b46a9, type: 3}
-  - {fileID: 21300000, guid: 90554ec34831fa3468ae51f957e16fb2, type: 3}
-  - {fileID: 21300000, guid: 55872bc05b3172649b0d66ac58a717cf, type: 3}
+  - {fileID: 21300000, guid: b9914f89951678845b3e6d0105b8609e, type: 3}
+  - {fileID: 21300000, guid: e3c7c54b872fd384abb7d09b1b40fd7f, type: 3}
+  - {fileID: 21300000, guid: 15398bdf36f4ee447bff5db2a2c48ce9, type: 3}
+  - {fileID: 21300000, guid: 68f3ffe62e1ff1f4492df92c4f1a2704, type: 3}
+  - {fileID: 21300000, guid: 0aa56a10d8ff8584597af38c9018d8d8, type: 3}
+  - {fileID: 21300000, guid: e52368c8e80015344be016661341325e, type: 3}
+  - {fileID: 21300000, guid: 7cb1e4e534518914694f20cc1895b326, type: 3}
+  - {fileID: 21300000, guid: 1b1c1e771755ba44a83cc727e4cfaa98, type: 3}
+  - {fileID: 21300000, guid: b4f3d1c9c13f8b745ad1979d2ae9e6e0, type: 3}
+  - {fileID: 21300000, guid: d91019352c0638647be0c88156a043a2, type: 3}
+  - {fileID: 21300000, guid: 83988605ed20a03469cf340f613a54ce, type: 3}
+  - {fileID: 21300000, guid: f0015db1a890e13478e03a64cf0009b9, type: 3}
+  - {fileID: 21300000, guid: fb96784862448bf4385a7662e464bb89, type: 3}
+  - {fileID: 21300000, guid: 5d1cd9362756ca8448352fea5c756e81, type: 3}
+  - {fileID: 21300000, guid: bc60af18c82229a44b162a4e49741d84, type: 3}
+  - {fileID: 21300000, guid: b2346fbd6b5de404eac7e2a7b1266f1e, type: 3}
+  - {fileID: 21300000, guid: 42fc2419361c4f844bf68f984f93079c, type: 3}
+  - {fileID: 21300000, guid: 44b5f46884e29884b9290d784186badd, type: 3}
   materials:
   - {fileID: 2100000, guid: 9aa8ed67591432941bb76f12eb23ff91, type: 2}
   - {fileID: 2100000, guid: e894889ea27bab04099b83cf3d68bf1f, type: 2}
   - {fileID: 2100000, guid: 06daeeb330b27b94a8b2cee795f408f4, type: 2}
   gunBar: {fileID: 1613319453}
+  gunBarBlack: {fileID: 1333866048}
   percentText: {fileID: 1501326038}
   spawnPoint: {fileID: 409942318492302785}
   firstGunObj: {fileID: 0}
@@ -1375,7 +1391,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &364980515
 GameObject:
@@ -1481,7 +1497,7 @@ RectTransform:
   - {fileID: 434838214}
   - {fileID: 1062549121}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1908,7 +1924,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4213da602cc133a48a0ea65f015218c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  swerveSpeed: 1
+  swerveSpeed: 0.2
   playerObject: {fileID: 4568779558662770923}
 --- !u!4 &414058284
 Transform:
@@ -1923,7 +1939,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &422305238
 GameObject:
@@ -2031,7 +2047,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &423621134
 MonoBehaviour:
@@ -2068,11 +2084,15 @@ MonoBehaviour:
   - {fileID: 1123436122099266891, guid: 774c40b9bd4d3784ba0f8221a9424739, type: 3}
   posZ:
   - -80
-  - -70
-  - -50
-  - -40
-  - -20
+  - -65
+  - -30
   - -10
+  - 30
+  - 50
+  - 85
+  - 100
+  strongEnemy: {fileID: 0}
+  parent: {fileID: 0}
 --- !u!1 &431144305
 GameObject:
   m_ObjectHideFlags: 0
@@ -2927,7 +2947,7 @@ Transform:
   - {fileID: 393325657}
   - {fileID: 352189480}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &681571263
 MonoBehaviour:
@@ -3614,8 +3634,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 935702732}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 21, y: 1, z: 0.8}
+  m_LocalPosition: {x: 0, y: 0, z: 55}
+  m_LocalScale: {x: 31, y: 1, z: 0.7}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -5016,7 +5036,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1237194065
 GameObject:
@@ -5328,12 +5348,12 @@ MonoBehaviour:
   - {fileID: 6253064722488657786, guid: e6396a5df0c079741802207f280d2067, type: 3}
   - {fileID: 5141797209338660225, guid: 4395db827236f164181b52f573f71207, type: 3}
   posX:
-  - -2
-  - 2
+  - -1.75
+  - 1.75
   posZ:
-  - -60
-  - -30
-  - 0
+  - -50
+  - 10
+  - 70
 --- !u!4 &1313938560
 Transform:
   m_ObjectHideFlags: 0
@@ -5347,7 +5367,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1333866046
 GameObject:
@@ -6727,6 +6747,104 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1541035654}
   m_CullTransparentMesh: 1
+--- !u!1 &1574564137
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1574564141}
+  - component: {fileID: 1574564140}
+  - component: {fileID: 1574564139}
+  - component: {fileID: 1574564138}
+  m_Layer: 0
+  m_Name: FinishLine
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!64 &1574564138
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1574564137}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &1574564139
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1574564137}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: deca5423b511bc040bada3506a720daf, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &1574564140
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1574564137}
+  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &1574564141
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1574564137}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.01, z: 126}
+  m_LocalScale: {x: 0.7, y: 1, z: 0.25}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1585717156
 GameObject:
   m_ObjectHideFlags: 0
@@ -6843,7 +6961,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1613319451
 GameObject:
@@ -7774,7 +7892,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1947301554
 MonoBehaviour:
@@ -8882,7 +9000,7 @@ Transform:
   - {fileID: 1361415759429019909}
   - {fileID: 2086058575}
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &608836277661896280
 GameObject:
@@ -10178,7 +10296,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 7
-  spawnSpeed: 0.48
+  spawnSpeed: 0.36
   rangeCost: 10
   rangeLevel: 1
   rateFireCost: 10
@@ -10478,7 +10596,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 7
-  spawnSpeed: 0.54
+  spawnSpeed: 0.39
   rangeCost: 10
   rangeLevel: 1
   rateFireCost: 10
@@ -10815,7 +10933,7 @@ Transform:
   - {fileID: 1869950211}
   - {fileID: 202192937}
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3787337111433436950
 GameObject:
@@ -10967,7 +11085,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 7
-  spawnSpeed: 0.52
+  spawnSpeed: 0.38
   rangeCost: 10
   rangeLevel: 1
   rateFireCost: 10
@@ -11037,7 +11155,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 7
-  spawnSpeed: 0.36
+  spawnSpeed: 0.3
   rangeCost: 10
   rangeLevel: 1
   rateFireCost: 10
@@ -11152,7 +11270,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 7
-  spawnSpeed: 0.38
+  spawnSpeed: 0.31
   rangeCost: 10
   rangeLevel: 1
   rateFireCost: 10
@@ -11192,7 +11310,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 7
-  spawnSpeed: 0.58
+  spawnSpeed: 0.41
   rangeCost: 10
   rangeLevel: 1
   rateFireCost: 10
@@ -11364,7 +11482,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 7
-  spawnSpeed: 0.4
+  spawnSpeed: 0.32
   rangeCost: 10
   rangeLevel: 1
   rateFireCost: 10
@@ -11462,7 +11580,7 @@ CapsuleCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4568779558662770923}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 4c5b8b258998d194bbb6f9d89bef8f87, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.5
@@ -13339,7 +13457,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 7
-  spawnSpeed: 0.46
+  spawnSpeed: 0.35
   rangeCost: 10
   rangeLevel: 1
   rateFireCost: 10
@@ -13608,7 +13726,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 7
-  spawnSpeed: 0.32
+  spawnSpeed: 0.28
   rangeCost: 10
   rangeLevel: 1
   rateFireCost: 10
@@ -13699,7 +13817,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 7
-  spawnSpeed: 0.56
+  spawnSpeed: 0.4
   rangeCost: 10
   rangeLevel: 1
   rateFireCost: 10
@@ -13761,7 +13879,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 7
-  spawnSpeed: 0.26
+  spawnSpeed: 0.25
   rangeCost: 10
   rangeLevel: 1
   rateFireCost: 10
@@ -13839,7 +13957,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 768618477793495347, guid: 106a35fce98c49f4f901256e861dbc82, type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 768618477793495347, guid: 106a35fce98c49f4f901256e861dbc82, type: 3}
       propertyPath: m_LocalPosition.x
@@ -13976,7 +14094,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 7
-  spawnSpeed: 0.5
+  spawnSpeed: 0.37
   rangeCost: 10
   rangeLevel: 1
   rateFireCost: 10
@@ -14318,7 +14436,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 7
-  spawnSpeed: 0.3
+  spawnSpeed: 0.27
   rangeCost: 10
   rangeLevel: 1
   rateFireCost: 10
@@ -14438,7 +14556,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 7
-  spawnSpeed: 0.44
+  spawnSpeed: 0.34
   rangeCost: 10
   rangeLevel: 1
   rateFireCost: 10
@@ -14533,7 +14651,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 7
-  spawnSpeed: 0.6
+  spawnSpeed: 0.42
   rangeCost: 10
   rangeLevel: 1
   rateFireCost: 10
@@ -14723,7 +14841,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 7
-  spawnSpeed: 0.28
+  spawnSpeed: 0.26
   rangeCost: 10
   rangeLevel: 1
   rateFireCost: 10
@@ -14781,7 +14899,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 7
-  spawnSpeed: 0.42
+  spawnSpeed: 0.33
   rangeCost: 10
   rangeLevel: 1
   rateFireCost: 10
@@ -14969,7 +15087,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 7
-  spawnSpeed: 0.34
+  spawnSpeed: 0.29
   rangeCost: 10
   rangeLevel: 1
   rateFireCost: 10

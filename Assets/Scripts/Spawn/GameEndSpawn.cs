@@ -16,11 +16,11 @@ public class GameEndSpawn : MonoBehaviour
     {
         for (int i = 0; i < 40; i+=2)
         {
-            if (i == 0)
+            if ((i + 55) == 55)
             {
-                var cashLeft = Instantiate(enemyCash, new Vector3(-2.5f, 0.5f, 2 * i + 10), enemyCash.transform.rotation);
-                var cashMiddle = Instantiate(enemyCash, new Vector3(0, 0.5f, 2 * i + 10), enemyCash.transform.rotation);
-                var cashRight = Instantiate(enemyCash, new Vector3(2.5f, 0.5f, 2 * i + 10), enemyCash.transform.rotation);
+                var cashLeft = Instantiate(enemyCash, new Vector3(-2.5f, 0.5f, 2 * (i + 55) + 10), enemyCash.transform.rotation);
+                var cashMiddle = Instantiate(enemyCash, new Vector3(0, 0.5f, 2 * (i + 55) + 10), enemyCash.transform.rotation);
+                var cashRight = Instantiate(enemyCash, new Vector3(2.5f, 0.5f, 2 * (i + 55) + 10), enemyCash.transform.rotation);
                 count += 3;
                 TextUpgrade(cashLeft, i);
                 TextUpgrade(cashMiddle, i);
@@ -36,9 +36,9 @@ public class GameEndSpawn : MonoBehaviour
             }
             else
             {
-                var cashLeft = Instantiate(enemyCash, new Vector3(-2.5f, 0.5f, 2 * i + 15), enemyCash.transform.rotation);
-                var cashMiddle = Instantiate(enemyCash, new Vector3(0, 0.5f, 2 * i + 15), enemyCash.transform.rotation);
-                var cashRight = Instantiate(enemyCash, new Vector3(2.5f, 0.5f, 2 * i + 15), enemyCash.transform.rotation);
+                var cashLeft = Instantiate(enemyCash, new Vector3(-2.5f, 0.5f, 2 * (i + 55) + 17), enemyCash.transform.rotation);
+                var cashMiddle = Instantiate(enemyCash, new Vector3(0, 0.5f, 2 * (i + 55) + 17), enemyCash.transform.rotation);
+                var cashRight = Instantiate(enemyCash, new Vector3(2.5f, 0.5f, 2 * (i + 55) + 17), enemyCash.transform.rotation);
                 count += 3;
 
                 TextUpgrade(cashLeft, i);
@@ -64,7 +64,7 @@ public class GameEndSpawn : MonoBehaviour
         }
         //GameObject cash = parent.transform.GetChild(0).gameObject;
         int needKillCount = parent.GetComponent<EnemyStateManager>().needKillBullet;
-        needKillCount = i * 5 + 3 * (GameEnd.end.levelNumber + 1);
+        needKillCount = (i / 2) * 5 + 3 * (GameEnd.end.levelNumber + 1);
         parent.GetComponent<EnemyStateManager>().needKillBullet = needKillCount;
         parent.GetComponent<EnemyStateManager>().needKillBulletText.text = "" + needKillCount;
     }
@@ -74,7 +74,7 @@ public class GameEndSpawn : MonoBehaviour
     }
     void Update()
     {
-        if (player.transform.position.z > 2)
+        if (player.transform.position.z > 125)
         {
             endGameBar.gameObject.SetActive(true);
         }

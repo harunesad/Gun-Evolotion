@@ -17,7 +17,7 @@ public class EnemyIdleState : EnemyBaseState
             enemy.needKillBulletText.color = Color.green;
             enemy.levelText.GetComponent<RectTransform>().sizeDelta = new Vector2(400, 100);
             enemy.levelText.fontSize = 100;
-            enemy.levelText.color = Color.black;
+            enemy.levelText.color = new Color(0.745f, 0, 1, 1);
             enemy.levelText.text = "Level " + enemy.enemyLevel;
             enemy.needKillBulletText.text = "" + enemy.needKillBullet;
         }

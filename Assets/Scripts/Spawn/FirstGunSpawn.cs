@@ -12,6 +12,7 @@ public class FirstGunSpawn : MonoBehaviour
     public List<Sprite> gunSprites;
     public List<Material> materials;
     public Image gunBar;
+    public Image gunBarBlack;
     public TextMeshProUGUI percentText;
     public GameObject spawnPoint;
     public GameObject firstGunObj;
@@ -46,6 +47,7 @@ public class FirstGunSpawn : MonoBehaviour
     }
     public void ProgressBar()
     {
+        gunBarBlack.sprite = gunSprites[startIndex];
         gunBar.sprite = gunSprites[startIndex];
         gunBar.DOFillAmount(next / 100, 0.4f);
         percentText.text = "% " + next;

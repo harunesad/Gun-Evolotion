@@ -11,16 +11,8 @@ public class PlayerBulletAttack : MonoBehaviour
     Transform parent;
     private void Start()
     {
-        parent = EnemiesSpawn.enemiesSpawn.strongEnemy.transform.GetChild(0);
-        for (int i = 0; i < 7; i++)
-        {
-            if (parent.GetComponent<EnemyStateManager>() == null)
-            {
-                parent = parent.transform.GetChild(0);
-            }
-        }
-        attack = (int)Mathf.Round(parent.GetComponent<EnemyStateManager>().needKillBullet / 5) + 1;
-        Debug.Log(parent.GetComponent<EnemyStateManager>().needKillBullet);
+        attack = (int)Mathf.Round(EnemiesSpawn.enemiesSpawn.parent.GetComponent<EnemyStateManager>().needKillBullet / 3) + 1;
+        Debug.Log(EnemiesSpawn.enemiesSpawn.parent.GetComponent<EnemyStateManager>().needKillBullet);
     }
     void Update()
     {
@@ -54,7 +46,7 @@ public class PlayerBulletAttack : MonoBehaviour
             parent.GetComponent<EnemyStateManager>().needKillBulletText.text = "0";
         }
         Vector3 scale = new Vector3(other.transform.localScale.x, other.transform.localScale.y, other.transform.localScale.z);
-        other.transform.DOScale(scale * 1.1f, 0.1f).OnComplete(() => 
+        other.transform.DOScale(scale * 1.05f, 0.1f).OnComplete(() => 
         {
             other.transform.DOScale(scale, 0.1f);
             });

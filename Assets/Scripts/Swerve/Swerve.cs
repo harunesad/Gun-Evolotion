@@ -26,7 +26,7 @@ public class Swerve : MonoBehaviour
     }
     void Limit()
     {
-        float posX = Mathf.Clamp(playerObject.transform.position.x, -3.75f, 3.75f);
+        float posX = Mathf.Clamp(playerObject.transform.position.x, -3.2f, 3.2f);
         playerObject.transform.position = new Vector3(posX, 0, playerObject.transform.position.z);
     }
 }

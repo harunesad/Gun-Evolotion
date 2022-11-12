@@ -2181,12 +2181,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parent: {fileID: 1123436122099266891}
   spawnSpeed: 0
-  needKillBullet: 1
+  needKillBullet: 2
   needKillBulletText: {fileID: 6282337242466320606}
+  levelText: {fileID: 0}
   enemyAnim: {fileID: 5376274443954532215}
   enemySpawn: {fileID: 0}
   rotX: 0
   rotate: 0
+  enemyLevel: 0
 --- !u!65 &278231431039578527
 BoxCollider:
   m_ObjectHideFlags: 0

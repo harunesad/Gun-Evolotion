@@ -23,14 +23,14 @@ public class EnemyDieState : EnemyBaseState
         {
             enemy.gameObject.layer = 12;
         }
-        if (enemy.gameObject.transform.position.z > 2)
+        if (enemy.gameObject.transform.position.z > 125)
         {
             gameEnd.progress++;
             gameEnd.endGameBarProgress.DOFillAmount(gameEnd.progress / gameEnd.count, 1);
         }
         enemy.parent.layer = 0;
         enemy.gameObject.transform.parent = null;
-        enemy.gameObject.transform.localScale = new Vector3(2, 2, 2);
+        enemy.gameObject.transform.localScale = new Vector3(4, 4, 4);
 
         //enemy.GetComponent<BoxCollider>().isTrigger = false;
         //enemy.GetComponent<Rigidbody>().useGravity = true;
