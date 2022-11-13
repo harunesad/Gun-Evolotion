@@ -9,16 +9,6 @@ public class EnemyDieState : EnemyBaseState
     public override void EnterState(EnemyStateManager enemy)
     {
         gameEnd = GameObject.FindObjectOfType<GameEndSpawn>();
-        //Debug.Log(enemy.gameObject.transform.parent.gameObject);
-        //GameObject parent = enemy.gameObject.transform.parent.gameObject;
-        //for (int i = 0; i < 7; i++)
-        //{
-        //    parent = parent.transform.parent.gameObject;
-        //}
-
-        //GameObject parent = enemy.gameObject.transform.parent.gameObject;
-
-        //GameObject enemySoldier = parent.transform.parent.gameObject;
         if (enemy.gameObject.layer == 14)
         {
             enemy.gameObject.layer = 12;
@@ -31,10 +21,6 @@ public class EnemyDieState : EnemyBaseState
         enemy.parent.layer = 0;
         enemy.gameObject.transform.parent = null;
         enemy.gameObject.transform.localScale = new Vector3(4, 4, 4);
-
-        //enemy.GetComponent<BoxCollider>().isTrigger = false;
-        //enemy.GetComponent<Rigidbody>().useGravity = true;
-        //enemy.GetComponent<BoxCollider>().size = new Vector3(0.5f, 0.5f, 0.5f);
 
         enemy.CancelInvoke();
         enemy.enemyAnim.SetBool("Die", true);
@@ -56,9 +42,6 @@ public class EnemyDieState : EnemyBaseState
         }
         enemy.transform.localEulerAngles = new Vector3(enemy.rotX, 180, 0);
         enemy.SwitchState(enemy.RotatePozitiveState);
-        //Object.Destroy(enemy.gameObject.GetComponent<EnemyStateManager>());
-        //Debug.Log("saddsasda");
-        //Time.timeScale = 0;
     }
 
     public override void OnTriggerExit(EnemyStateManager enemy, Collider other)

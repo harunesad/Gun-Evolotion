@@ -21,12 +21,10 @@ public class EnemyRotateNegativeState : EnemyBaseState
 
     public override void UpdateState(EnemyStateManager enemy)
     {
-        //enemy.transform.Rotate(0, 0, -Time.deltaTime * 10);
         Rotate(enemy, enemy.rotate);
         if (enemy.transform.localEulerAngles.y < 120)
         {
             enemy.SwitchState(enemy.RotatePozitiveState);
-            Debug.Log("F");
         }
     }
     void Rotate(EnemyStateManager enemy, int rotate)

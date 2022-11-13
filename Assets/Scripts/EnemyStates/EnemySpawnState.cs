@@ -17,8 +17,7 @@ public class EnemySpawnState : EnemyBaseState
 
     public override void OnTriggerExit(EnemyStateManager enemy, Collider other)
     {
-        //spawn.CancelInvoke();
-        //enemy.SwitchState(enemy.IdleState);
+
     }
 
     public override void OnTriggerStay(EnemyStateManager enemy, Collider other)

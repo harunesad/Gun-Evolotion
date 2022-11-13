@@ -24,7 +24,6 @@ public class SpawnUpgrade : MonoBehaviour
     {
         so = SaveManager.Load();
 
-        //playerState = FirstGunSpawn.first.guns[FirstGunSpawn.first.startIndex].GetComponent<PlayerStateManager>();
         gunProperties = FirstGunSpawn.first.firstGunObj.GetComponent<GunProperties>();
         playerStateManager = FindObjectOfType<PlayerStateManager>();
         cashCostText.text = "" + so.cashId * 10 + " $";
@@ -33,22 +32,17 @@ public class SpawnUpgrade : MonoBehaviour
         rangeLevelText.text = "" + so.rangeId[FirstGunSpawn.first.startIndex];
         rateFireCostText.text = "" + so.rateFireId[FirstGunSpawn.first.startIndex] * 10 + " $";
         rateFireLevelText.text = "" + so.rateFireId[FirstGunSpawn.first.startIndex];
-        //NewRateFire();
-        //BoxCollider firstGun = FindObjectOfType<PlayerStateManager>().GetComponent<BoxCollider>();
-        //firstGun.size = new Vector3(firstGun.size.x, firstGun.size.y, firstGun.size.z + ((so.rangeId[FirstGunSpawn.first.startIndex] - 1) / 10f));
         FirstGunSpawn.first.firstGunObj.GetComponent<GunProperties>().range += ((so.rangeId[FirstGunSpawn.first.startIndex] - 1) / 10f);
     }
     public void NewRateFire()
     {
         gunProperties = FirstGunSpawn.first.firstGunObj.GetComponent<GunProperties>();
         gunProperties.spawnSpeed -= (float)(so.rateFireId[FirstGunSpawn.first.startIndex] - 1) / 40;
-        Debug.Log((float)(so.rateFireId[FirstGunSpawn.first.startIndex] - 1) / 40);
         PlayerStateManager playerState = FindObjectOfType<PlayerStateManager>();
         playerState.spawnSpeed = gunProperties.spawnSpeed;
     }
     public void BuyCash()
     {
-        Debug.Log("asas");
         if (Collect.collect.cash >= cash.cashCost)
         {
             Collect.collect.cash -= cash.cashCost;
@@ -91,7 +85,6 @@ public class SpawnUpgrade : MonoBehaviour
             PlayerPrefs.SetInt("Cash", Collect.collect.cash);
             Collect.collect.cashText.text = "" + PlayerPrefs.GetInt("Cash") + " $";
             gunProperties.spawnSpeed -= (float)(so.rateFireId[FirstGunSpawn.first.startIndex]) / 40;
-            Debug.Log((float)(so.rateFireId[FirstGunSpawn.first.startIndex]) / 40);
             playerStateManager.spawnSpeed = gunProperties.spawnSpeed;
             so.rateFireId[FirstGunSpawn.first.startIndex]++;
             gunProperties.rateFireLevel = so.rateFireId[FirstGunSpawn.first.startIndex];

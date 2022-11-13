@@ -6,7 +6,6 @@ using UnityEngine.UI;
 
 public class EnemyStateManager : MonoBehaviour
 {
-    //public float bulletSpeed;
     public GameObject parent;
     public float spawnSpeed;
     public int needKillBullet;
@@ -17,7 +16,6 @@ public class EnemyStateManager : MonoBehaviour
     public float rotX;
     public int rotate;
     public int enemyLevel;
-    //public int startLevel;
 
     EnemyBaseState currentState;
     public EnemyIdleState IdleState = new EnemyIdleState();
@@ -27,7 +25,6 @@ public class EnemyStateManager : MonoBehaviour
     public EnemyRotatePozitiveState RotatePozitiveState = new EnemyRotatePozitiveState();
     void Start()
     {
-        //needKillBullet *= (GameEnd.end.levelNumber + 1);
         currentState = IdleState;
         currentState.EnterState(this);
     }

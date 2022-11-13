@@ -8,11 +8,6 @@ public class PlayerStateManager : MonoBehaviour
 {
     public float moveSpeed;
     public float spawnSpeed;
-    //public int rangeCost;
-    //public float rangeLevel;
-    //public int rateFireCost;
-    //public float rateFireLevel;
-    //public Image lifeBar;
     public TextMeshProUGUI levelText;
     public GameObject player;
     public FirstGunSpawn firstGun;

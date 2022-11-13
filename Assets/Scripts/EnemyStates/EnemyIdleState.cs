@@ -7,7 +7,6 @@ public class EnemyIdleState : EnemyBaseState
     public override void EnterState(EnemyStateManager enemy)
     {
         enemy.needKillBullet *= (GameEnd.end.levelNumber + 1);
-        //enemy.startLevel = enemy.enemyLevel;
         GameObject canvas = enemy.needKillBulletText.transform.parent.gameObject;
         if (enemy.gameObject.layer == 14)
         {
@@ -38,7 +37,7 @@ public class EnemyIdleState : EnemyBaseState
 
     public override void OnTriggerStay(EnemyStateManager enemy, Collider other)
     {
-        //enemy.SwitchState(enemy.SpawnState);
+
     }
 
     public override void UpdateState(EnemyStateManager enemy)

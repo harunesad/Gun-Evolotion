@@ -12,14 +12,4 @@ public class GunProperties : MonoBehaviour
     public float rateFireLevel;
     public float range;
     public int playerLevel;
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

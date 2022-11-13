@@ -62,7 +62,6 @@ public class GameEndSpawn : MonoBehaviour
         {
              parent = parent.transform.GetChild(0).gameObject;
         }
-        //GameObject cash = parent.transform.GetChild(0).gameObject;
         int needKillCount = parent.GetComponent<EnemyStateManager>().needKillBullet;
         needKillCount = (i / 2) * 5 + 3 * (GameEnd.end.levelNumber + 1);
         parent.GetComponent<EnemyStateManager>().needKillBullet = needKillCount;

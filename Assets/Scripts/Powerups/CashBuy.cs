@@ -13,12 +13,4 @@ public class CashBuy : MonoBehaviour
     {
         cash = this;
     }
-    void Start()
-    {
-
-    }
-    void Update()
-    {
-        
-    }
 }

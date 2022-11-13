@@ -10,26 +10,12 @@ public class JsonSave : MonoBehaviour
     private void Awake()
     {
         save = PlayerPrefs.GetInt("State");
-        if (save == 1)
-        {
-            SceneManager.LoadScene(save);
-        }
         if (save == 0)
         {
             save++;
             SaveManager.Save(so);
-            SceneManager.LoadScene(1);
             PlayerPrefs.SetInt("State", save);
         }
-    }
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        SceneManager.LoadScene(1);
     }
 }

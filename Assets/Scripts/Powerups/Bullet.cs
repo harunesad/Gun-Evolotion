@@ -26,15 +26,8 @@ public class Bullet : MonoBehaviour
             gameObject.GetComponent<Renderer>().material.color = new Color(0.9f, 0.2f, 0.2f, 0.4f);
         }
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     private void OnTriggerEnter(Collider other)
     {
-        //bulletCount++;
         SpawnPlayerBullet spawnBullet = FirstGunSpawn.first.firstGunObj.GetComponent<SpawnPlayerBullet>();
         if (result == "-" && spawnBullet.bulletCount > 0)
         {

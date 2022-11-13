@@ -43,10 +43,6 @@ public class Collect : MonoBehaviour
     {
         playerAnim.SetBool("Run", false);
     }
-    void Update()
-    {
-
-    }
     private void OnTriggerEnter(Collider other)
     {
         EnemyStateManager enemyStateManager = other.GetComponent<EnemyStateManager>();
@@ -60,16 +56,9 @@ public class Collect : MonoBehaviour
                     collectedGuns = FirstGunSpawn.first.guns[i];
                 }
             }
-            //SpawnPlayerBullet spawnPlayer = FindObjectOfType<SpawnPlayerBullet>();
-            //GameObject spawnPoint = spawnPlayer.transform.parent.gameObject;
-            //Destroy(FindObjectOfType<PlayerStateManager>().gameObject);
-            //Destroy(spawnPlayer);
-            //spawnPlayer.gameObject.SetActive(false);
             FirstGunSpawn.first.firstGunObj.SetActive(false);
             collectedGuns.gameObject.SetActive(true);
             FirstGunSpawn.first.firstGunObj = collectedGuns;
-            //var gun = Instantiate(collectedGuns, spawnPoint.transform.position, Quaternion.identity);
-            //gun.transform.parent = spawnPoint.transform;
             FirstGunSpawn.first.NewDistance();
             SpawnUpgrade.upgrade.NewRateFire();
             playerStateManager.levelText.text = "Level " + collectedGuns.GetComponent<GunProperties>().playerLevel;

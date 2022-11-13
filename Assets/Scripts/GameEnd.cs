@@ -23,10 +23,6 @@ public class GameEnd : MonoBehaviour
         }
         levelText.text = "LEVEL " + (levelNumber + 1);
     }
-    void Update()
-    {
-        
-    }
     private void FixedUpdate()
     {
         if (push)
@@ -38,7 +34,6 @@ public class GameEnd : MonoBehaviour
     {
         if (collision.gameObject.layer == 6 && collision.gameObject.transform.position.z < 125)
         {
-            Debug.Log(collision.gameObject.name);
             GameOver();
         }
         if (collision.gameObject.layer == 6 && collision.gameObject.transform.position.z > 125)
@@ -47,7 +42,6 @@ public class GameEnd : MonoBehaviour
         }
         if (collision.gameObject.layer == 15)
         {
-            Debug.Log("saddsadsa");
             push = true;
         }
     }
@@ -55,7 +49,6 @@ public class GameEnd : MonoBehaviour
     {
         if (collision.gameObject.layer == 15)
         {
-            Debug.Log("bbbbb");
             push = false;
         }
     }
@@ -63,7 +56,6 @@ public class GameEnd : MonoBehaviour
     {
         if ((other.gameObject.layer == 14) && other.gameObject.transform.position.z < 125)
         {
-            Debug.Log(other.gameObject.name);
             GameOver();
         }
         if ((other.gameObject.layer == 14) && other.gameObject.transform.position.z > 125)
@@ -75,11 +67,9 @@ public class GameEnd : MonoBehaviour
     {
         nextStage.SetActive(true);
         FirstGunSpawn.first.ProgressBar();
-        //stateManager.CancelInvoke();
         Destroy(FindObjectOfType<PlayerStateManager>().levelText.gameObject);
         Destroy(FindObjectOfType<PlayerStateManager>().GetComponent<PlayerStateManager>());
         Destroy(FindObjectOfType<GunProperties>().gameObject);
-        //Destroy(FindObjectOfType<SpawnPlayerBullet>().GetComponent<SpawnPlayerBullet>());
         Collect.collect.isStart = false;
         Collect.collect.EndGame();
         LevelSave();
@@ -87,15 +77,11 @@ public class GameEnd : MonoBehaviour
 
     public void GameOver()
     {
-        //EnemyStateManager enemyState = collision.transform.Find("SpawnPoint").GetComponent<EnemyStateManager>();
         gameOver.SetActive(true);
-        //stateManager.CancelInvoke();
         Destroy(FindObjectOfType<PlayerStateManager>().levelText.gameObject);
         Destroy(FindObjectOfType<PlayerStateManager>().GetComponent<PlayerStateManager>());
         Destroy(FindObjectOfType<GunProperties>().gameObject);
-        //Destroy(FindObjectOfType<SpawnPlayerBullet>().GetComponent<SpawnPlayerBullet>());
         Collect.collect.EndGame();
-        //Destroy(enemyState.gameObject);
         Collect.collect.isStart = false;
     }
     public void Restart()
@@ -116,10 +102,5 @@ public class GameEnd : MonoBehaviour
     void LevelText()
     {
         levelText.text = "LEVEL " + (levelNumber + 1);
-    }
-    public void Exit()
-    {
-        Debug.Log("exit");
-        Application.Quit();
     }
 }

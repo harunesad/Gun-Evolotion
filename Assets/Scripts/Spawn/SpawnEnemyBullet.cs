@@ -9,16 +9,13 @@ public class SpawnEnemyBullet : MonoBehaviour
     public Transform spawnPoint;
     private void Start()
     {
-        //spawnPoint = gameObject.transform.parent;
         spawnPoint = gameObject.transform.GetChild(0);
         playerStateManager = FindObjectOfType<PlayerStateManager>();
     }
     public void SpawnObjects()
     {
-        //Time.timeScale = 0;
         if (playerStateManager != null)
         {
-            Debug.Log("sdasddsadas");
             Instantiate(spawnBullet, spawnPoint.position, Quaternion.identity);
         }
     }

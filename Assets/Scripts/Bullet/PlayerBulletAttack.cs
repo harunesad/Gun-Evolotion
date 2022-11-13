@@ -12,7 +12,6 @@ public class PlayerBulletAttack : MonoBehaviour
     private void Start()
     {
         attack = (int)Mathf.Round(EnemiesSpawn.enemiesSpawn.parent.GetComponent<EnemyStateManager>().needKillBullet / 3) + 1;
-        Debug.Log(EnemiesSpawn.enemiesSpawn.parent.GetComponent<EnemyStateManager>().needKillBullet);
     }
     void Update()
     {
@@ -29,8 +28,6 @@ public class PlayerBulletAttack : MonoBehaviour
                 parent = parent.transform.GetChild(0);
             }
         }
-        Debug.Log(parent.name);
-        //GameObject triggerObj = parent.GetChild(0).gameObject;
         int needKillCount = parent.GetComponent<EnemyStateManager>().needKillBullet;
         TextMeshProUGUI needKillText = parent.GetComponent<EnemyStateManager>().needKillBulletText;
         needKillCount -= attack;
@@ -50,7 +47,6 @@ public class PlayerBulletAttack : MonoBehaviour
         {
             other.transform.DOScale(scale, 0.1f);
             });
-        Debug.Log(scale * 2);
         Destroy(gameObject);
     }
 }

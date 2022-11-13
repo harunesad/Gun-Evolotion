@@ -7,7 +7,6 @@ using DG.Tweening;
 public class FirstGunSpawn : MonoBehaviour
 {
     public static FirstGunSpawn first;
-    //SpawnPlayerBullet playerBullet;
     public List<GameObject> guns;
     public List<Sprite> gunSprites;
     public List<Material> materials;
@@ -30,13 +29,10 @@ public class FirstGunSpawn : MonoBehaviour
         startIndex = PlayerPrefs.GetInt("FirstGun");
         guns[startIndex].gameObject.SetActive(true);
         firstGunObj = guns[startIndex];
-        Debug.Log(startIndex);
 
         NewDistance();
-        //playerBullet = firstGunObj.GetComponent<SpawnPlayerBullet>();
         current = (SpawnUpgrade.upgrade.so.progressId[startIndex + 1] - 1) * 10;
         next = SpawnUpgrade.upgrade.so.progressId[startIndex + 1] * 10;
-        Debug.Log(next);
         gunBar.fillAmount = current / 100;
         RenderSettings.skybox = materials[Mathf.FloorToInt((startIndex + 1) / 7)];
     }
@@ -53,12 +49,9 @@ public class FirstGunSpawn : MonoBehaviour
         percentText.text = "% " + next;
         SpawnUpgrade.upgrade.so.progressId[startIndex + 1] += 1;
         next = SpawnUpgrade.upgrade.so.progressId[startIndex + 1] * 10;
-        Debug.Log(next);
         if (next == 100)
         {
-            Debug.Log("sadsa");
             startIndex++;
-            Debug.Log(startIndex);
             PlayerPrefs.SetInt("FirstGun", startIndex);
         }
         SaveManager.Save(SpawnUpgrade.upgrade.so);
