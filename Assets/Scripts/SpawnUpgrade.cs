@@ -56,7 +56,6 @@ public class SpawnUpgrade : MonoBehaviour
             Collect.collect.cashInc += 1;
             PlayerPrefs.SetInt("CashInc", Collect.collect.cashInc);
             SaveManager.Save(so);
-            Collect.collect.StartGame();
         }
     }
     public void BuyRange()
@@ -74,7 +73,6 @@ public class SpawnUpgrade : MonoBehaviour
             gunProperties.rangeCost = so.rangeId[FirstGunSpawn.first.startIndex] * 10;
             rangeCostText.text = "" + gunProperties.rangeCost + " $";
             SaveManager.Save(so);
-            Collect.collect.StartGame();
         }
     }
     public void BuyRateFire()
@@ -92,7 +90,6 @@ public class SpawnUpgrade : MonoBehaviour
             gunProperties.rateFireCost = so.rateFireId[FirstGunSpawn.first.startIndex] * 10;
             rateFireCostText.text = "" + gunProperties.rateFireCost + " $";
             SaveManager.Save(so);
-            Collect.collect.StartGame();
         }
     }
 }

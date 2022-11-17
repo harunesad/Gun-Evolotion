@@ -6,7 +6,6 @@ public class PowerupsSpawn : MonoBehaviour
 {
     public List<GameObject> powerup;
     public List<GameObject> powerdown;
-    Vector3 pos;
     public List<float> posX;
     public List<float> posZ;
     void Start()

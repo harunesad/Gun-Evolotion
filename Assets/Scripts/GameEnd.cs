@@ -22,6 +22,8 @@ public class GameEnd : MonoBehaviour
             levelNumber = PlayerPrefs.GetInt("Level");
         }
         levelText.text = "LEVEL " + (levelNumber + 1);
+        EnemiesSpawn.enemiesSpawn.EnemySpawn();
+        GameEndSpawn.instance.EnemyCashSpawn();
     }
     private void FixedUpdate()
     {
@@ -73,6 +75,8 @@ public class GameEnd : MonoBehaviour
         Collect.collect.isStart = false;
         Collect.collect.EndGame();
         LevelSave();
+        GameEndSpawn.instance.endGameBar.gameObject.SetActive(false);
+        GameEndSpawn.instance.endGameBarProgress.gameObject.SetActive(false);
     }
 
     public void GameOver()
@@ -83,6 +87,10 @@ public class GameEnd : MonoBehaviour
         Destroy(FindObjectOfType<GunProperties>().gameObject);
         Collect.collect.EndGame();
         Collect.collect.isStart = false;
+        PlayerPrefs.SetInt("Level", levelNumber);
+        levelNumber = PlayerPrefs.GetInt("Level");
+        GameEndSpawn.instance.endGameBar.gameObject.SetActive(false);
+        GameEndSpawn.instance.endGameBarProgress.gameObject.SetActive(false);
     }
     public void Restart()
     {

@@ -33,9 +33,8 @@ public class SpawnPlayerBullet : MonoBehaviour
             yield return new WaitForSeconds(0.075f);
             Instantiate(spawnBullet, spawnPoint.position, Quaternion.identity);
             bulletCount--;
-            StartCoroutine(Attack());
         }
-        else
+        if (bulletCount == 0)
         {
             bulletCount = repeatBullet;
         }

@@ -11,7 +11,7 @@ public class PlayerBulletAttack : MonoBehaviour
     Transform parent;
     private void Start()
     {
-        attack = (int)Mathf.Round(EnemiesSpawn.enemiesSpawn.parent.GetComponent<EnemyStateManager>().needKillBullet / 3) + 1;
+        attack = EnemiesSpawn.enemiesSpawn.attack;
     }
     void Update()
     {

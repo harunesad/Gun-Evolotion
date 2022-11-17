@@ -763,7 +763,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a2e0058052b33749b0a4a2bb75c72d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletCount: 2
+  bulletCount: 1
   newBulletCount: 0
   result: +
 --- !u!1 &9203170269970614547

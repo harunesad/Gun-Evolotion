@@ -29,14 +29,10 @@ public class Bullet : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         SpawnPlayerBullet spawnBullet = FirstGunSpawn.first.firstGunObj.GetComponent<SpawnPlayerBullet>();
-        if (result == "-" && spawnBullet.bulletCount > 0)
+        if (result == "-")
         {
-            spawnBullet.bulletCount--;
+            spawnBullet.bulletCount = 0;
             bulletCount = spawnBullet.bulletCount;
-        }
-        else if (result == "-" && spawnBullet.bulletCount == 0)
-        {
-            bulletCount = 0;
         }
         newBulletCount = bulletCount;
         spawnBullet.bulletCount = newBulletCount;

@@ -48,8 +48,8 @@ public class FirstGunSpawn : MonoBehaviour
         gunBar.DOFillAmount(next / 100, 0.4f);
         percentText.text = "% " + next;
         SpawnUpgrade.upgrade.so.progressId[startIndex + 1] += 1;
-        next = SpawnUpgrade.upgrade.so.progressId[startIndex + 1] * 10;
-        if (next == 100)
+        current = (SpawnUpgrade.upgrade.so.progressId[startIndex + 1] - 1) * 10;
+        if (current == 100)
         {
             startIndex++;
             PlayerPrefs.SetInt("FirstGun", startIndex);

@@ -6,15 +6,21 @@ using TMPro;
 
 public class GameEndSpawn : MonoBehaviour
 {
+    public static GameEndSpawn instance;
     public float count;
     public float progress;
     public GameObject enemyCash;
     public GameObject player;
     public Image endGameBar;
     public Image endGameBarProgress;
-    void Start()
+    int needKillCount;
+    private void Awake()
     {
-        for (int i = 0; i < 40; i+=2)
+        instance = this;
+    }
+    public void EnemyCashSpawn()
+    {
+        for (int i = 0; i < 40; i += 2)
         {
             if ((i + 55) == 55)
             {
@@ -22,9 +28,9 @@ public class GameEndSpawn : MonoBehaviour
                 var cashMiddle = Instantiate(enemyCash, new Vector3(0, 0.5f, 2 * (i + 55) + 10), enemyCash.transform.rotation);
                 var cashRight = Instantiate(enemyCash, new Vector3(2.5f, 0.5f, 2 * (i + 55) + 10), enemyCash.transform.rotation);
                 count += 3;
-                TextUpgrade(cashLeft, i);
-                TextUpgrade(cashMiddle, i);
-                TextUpgrade(cashRight, i);
+                TextUpgradeFirst(cashLeft, i);
+                TextUpgradeFirst(cashMiddle, i);
+                TextUpgradeFirst(cashRight, i);
 
                 ScaleInc(cashLeft);
                 ScaleInc(cashMiddle);
@@ -40,6 +46,7 @@ public class GameEndSpawn : MonoBehaviour
                 var cashMiddle = Instantiate(enemyCash, new Vector3(0, 0.5f, 2 * (i + 55) + 17), enemyCash.transform.rotation);
                 var cashRight = Instantiate(enemyCash, new Vector3(2.5f, 0.5f, 2 * (i + 55) + 17), enemyCash.transform.rotation);
                 count += 3;
+                needKillCount += 7 * (i / 2);
 
                 TextUpgrade(cashLeft, i);
                 TextUpgrade(cashMiddle, i);
@@ -55,15 +62,25 @@ public class GameEndSpawn : MonoBehaviour
             }
         }
     }
-    void TextUpgrade(GameObject obj, int i)
+    void TextUpgradeFirst(GameObject obj, int i)
     {
         GameObject parent = obj.transform.GetChild(0).gameObject;
         for (int j = 0; j < 5; j++)
         {
              parent = parent.transform.GetChild(0).gameObject;
         }
-        int needKillCount = parent.GetComponent<EnemyStateManager>().needKillBullet;
-        needKillCount = (i / 2) * 5 + 3 * (GameEnd.end.levelNumber + 1);
+        needKillCount = parent.GetComponent<EnemyStateManager>().needKillBullet;
+        needKillCount = EnemiesSpawn.enemiesSpawn.needKillCount;
+        parent.GetComponent<EnemyStateManager>().needKillBullet = needKillCount;
+        parent.GetComponent<EnemyStateManager>().needKillBulletText.text = "" + needKillCount;
+    }
+    void TextUpgrade(GameObject obj, int i)
+    {
+        GameObject parent = obj.transform.GetChild(0).gameObject;
+        for (int j = 0; j < 5; j++)
+        {
+            parent = parent.transform.GetChild(0).gameObject;
+        }
         parent.GetComponent<EnemyStateManager>().needKillBullet = needKillCount;
         parent.GetComponent<EnemyStateManager>().needKillBulletText.text = "" + needKillCount;
     }
@@ -73,7 +90,7 @@ public class GameEndSpawn : MonoBehaviour
     }
     void Update()
     {
-        if (player.transform.position.z > 125)
+        if (player.transform.position.z > 125 && Collect.collect.isStart == true)
         {
             endGameBar.gameObject.SetActive(true);
         }
