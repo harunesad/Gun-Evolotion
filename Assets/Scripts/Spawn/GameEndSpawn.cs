@@ -64,25 +64,29 @@ public class GameEndSpawn : MonoBehaviour
     }
     void TextUpgradeFirst(GameObject obj, int i)
     {
-        GameObject parent = obj.transform.GetChild(0).gameObject;
-        for (int j = 0; j < 5; j++)
+        EnemyStateManager manager = obj.GetComponentInChildren<EnemyStateManager>();
+        if (manager != null)
         {
-             parent = parent.transform.GetChild(0).gameObject;
+            needKillCount = manager.needKillBullet;
+            needKillCount = EnemiesSpawn.enemiesSpawn.needKillCount;
+            manager.needKillBullet = needKillCount;
+            if (manager.needKillBulletText != null)
+            {
+                manager.needKillBulletText.text = "" + needKillCount;
+            }
         }
-        needKillCount = parent.GetComponent<EnemyStateManager>().needKillBullet;
-        needKillCount = EnemiesSpawn.enemiesSpawn.needKillCount;
-        parent.GetComponent<EnemyStateManager>().needKillBullet = needKillCount;
-        parent.GetComponent<EnemyStateManager>().needKillBulletText.text = "" + needKillCount;
     }
     void TextUpgrade(GameObject obj, int i)
     {
-        GameObject parent = obj.transform.GetChild(0).gameObject;
-        for (int j = 0; j < 5; j++)
+        EnemyStateManager manager = obj.GetComponentInChildren<EnemyStateManager>();
+        if (manager != null)
         {
-            parent = parent.transform.GetChild(0).gameObject;
+            manager.needKillBullet = needKillCount;
+            if (manager.needKillBulletText != null)
+            {
+                manager.needKillBulletText.text = "" + needKillCount;
+            }
         }
-        parent.GetComponent<EnemyStateManager>().needKillBullet = needKillCount;
-        parent.GetComponent<EnemyStateManager>().needKillBulletText.text = "" + needKillCount;
     }
     void ScaleInc(GameObject obj)
     {

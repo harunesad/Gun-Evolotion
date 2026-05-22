@@ -33,6 +33,22 @@ public static class SaveManager
         {
             Debug.Log("sadas");
         }
+
+        // Failsafe: Ensure lists are fully initialized and populated with default values
+        if (so == null)
+        {
+            so = new SaveObject();
+        }
+        if (so.rangeId == null) so.rangeId = new List<int>();
+        if (so.rateFireId == null) so.rateFireId = new List<int>();
+        if (so.progressId == null) so.progressId = new List<int>();
+
+        // Pre-fill lists with level 1 up to a safe size of 100 elements
+        for (int i = so.rangeId.Count; i < 100; i++) so.rangeId.Add(1);
+        for (int i = so.rateFireId.Count; i < 100; i++) so.rateFireId.Add(1);
+        for (int i = so.progressId.Count; i < 100; i++) so.progressId.Add(1);
+        if (so.cashId <= 0) so.cashId = 1;
+
         return so;
     }
 }

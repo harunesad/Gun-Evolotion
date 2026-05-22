@@ -23,13 +23,16 @@ public class EnemiesSpawn : MonoBehaviour
             int random = Random.Range(0, posZ.Count);
             var cash = Instantiate(enemiesCash[0], new Vector3(Random.Range(-2, 2), 0, posZ[random]), enemiesCash[0].transform.rotation);
             posZ.RemoveAt(random);
-            GameObject parent = cash.transform.GetChild(0).gameObject;
-            for (int j = 0; j < 5; j++)
+            
+            EnemyStateManager manager = cash.GetComponentInChildren<EnemyStateManager>();
+            if (manager != null)
             {
-                parent = parent.transform.GetChild(0).gameObject;
+                manager.needKillBullet *= (GameEnd.end.levelNumber + 1);
+                if (manager.needKillBulletText != null)
+                {
+                    manager.needKillBulletText.text = "" + manager.needKillBullet;
+                }
             }
-            parent.GetComponent<EnemyStateManager>().needKillBullet *= (GameEnd.end.levelNumber + 1);
-            parent.GetComponent<EnemyStateManager>().needKillBulletText.text = "" + parent.GetComponent<EnemyStateManager>().needKillBullet;
         }
         for (int j = FirstGunSpawn.first.startIndex; j < FirstGunSpawn.first.startIndex + 5; j++)
         {
@@ -38,17 +41,21 @@ public class EnemiesSpawn : MonoBehaviour
                 var enemy = Instantiate(enemies[j], new Vector3(Random.Range(-2, 2), 0, posZ[0]), enemies[j].transform.rotation);
                 strongEnemy = enemy;
                 posZ.RemoveAt(0);
-                parent = strongEnemy.transform.GetChild(0);
-                for (int i = 0; i < 7; i++)
+                
+                EnemyStateManager manager = strongEnemy.GetComponentInChildren<EnemyStateManager>();
+                if (manager != null)
                 {
-                    if (parent.GetComponent<EnemyStateManager>() == null)
+                    parent = manager.transform;
+                    manager.needKillBullet *= (GameEnd.end.levelNumber + 1);
+                    if (manager.levelText != null)
                     {
-                        parent = parent.transform.GetChild(0);
+                        manager.levelText.text = "Level " + manager.enemyLevel;
+                    }
+                    if (manager.needKillBulletText != null)
+                    {
+                        manager.needKillBulletText.text = "" + manager.needKillBullet;
                     }
                 }
-                parent.GetComponent<EnemyStateManager>().needKillBullet *= (GameEnd.end.levelNumber + 1);
-                parent.GetComponent<EnemyStateManager>().levelText.text = "Level " + parent.GetComponent<EnemyStateManager>().enemyLevel;
-                parent.GetComponent<EnemyStateManager>().needKillBulletText.text = "" + parent.GetComponent<EnemyStateManager>().needKillBullet;
             }
         }
         if (posZ.Count > 0)
@@ -56,16 +63,36 @@ public class EnemiesSpawn : MonoBehaviour
             for (int k = 0; k < posZ.Count; k++)
             {
                 var cash = Instantiate(enemiesCash[0], new Vector3(Random.Range(-2, 2), 0, posZ[k]), enemiesCash[0].transform.rotation);
-                GameObject parent = cash.transform.GetChild(0).gameObject;
-                for (int j = 0; j < 5; j++)
+                EnemyStateManager manager = cash.GetComponentInChildren<EnemyStateManager>();
+                if (manager != null)
                 {
-                    parent = parent.transform.GetChild(0).gameObject;
+                    manager.needKillBullet *= (GameEnd.end.levelNumber + 1);
+                    if (manager.needKillBulletText != null)
+                    {
+                        manager.needKillBulletText.text = "" + manager.needKillBullet;
+                    }
                 }
-                parent.GetComponent<EnemyStateManager>().needKillBullet *= (GameEnd.end.levelNumber + 1);
-                parent.GetComponent<EnemyStateManager>().needKillBulletText.text = "" + parent.GetComponent<EnemyStateManager>().needKillBullet;
             }
         }
-        attack = (int)Mathf.Round(parent.GetComponent<EnemyStateManager>().needKillBullet / 4) + 1;
-        needKillCount = (int)Mathf.Round(parent.GetComponent<EnemyStateManager>().needKillBullet);
+        
+        if (parent != null)
+        {
+            EnemyStateManager manager = parent.GetComponent<EnemyStateManager>();
+            if (manager != null)
+            {
+                attack = (int)Mathf.Round(manager.needKillBullet / 4) + 1;
+                needKillCount = (int)Mathf.Round(manager.needKillBullet);
+            }
+            else
+            {
+                attack = 1;
+                needKillCount = 10;
+            }
+        }
+        else
+        {
+            attack = 1;
+            needKillCount = 10;
+        }
     }
 }

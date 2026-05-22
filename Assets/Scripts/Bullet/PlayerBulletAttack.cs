@@ -20,33 +20,40 @@ public class PlayerBulletAttack : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        parent = other.transform.GetChild(0);
-        for (int i = 0; i < 7; i++)
+        EnemyStateManager enemyState = other.GetComponentInChildren<EnemyStateManager>();
+        if (enemyState == null)
         {
-            if (parent.GetComponent<EnemyStateManager>() == null)
+            enemyState = other.GetComponentInParent<EnemyStateManager>();
+        }
+
+        if (enemyState != null)
+        {
+            int needKillCount = enemyState.needKillBullet;
+            needKillCount -= attack;
+            
+            if (needKillCount >= 0)
             {
-                parent = parent.transform.GetChild(0);
+                enemyState.needKillBullet = needKillCount;
             }
-        }
-        int needKillCount = parent.GetComponent<EnemyStateManager>().needKillBullet;
-        TextMeshProUGUI needKillText = parent.GetComponent<EnemyStateManager>().needKillBulletText;
-        needKillCount -= attack;
-        needKillText.text = "" + needKillCount;
-        if (needKillCount >= 0)
-        {
-            parent.GetComponent<EnemyStateManager>().needKillBullet = needKillCount;
-            parent.GetComponent<EnemyStateManager>().needKillBulletText = needKillText;
-        }
-        else
-        {
-            parent.GetComponent<EnemyStateManager>().needKillBullet = 0;
-            parent.GetComponent<EnemyStateManager>().needKillBulletText.text = "0";
-        }
-        Vector3 scale = new Vector3(other.transform.localScale.x, other.transform.localScale.y, other.transform.localScale.z);
-        other.transform.DOScale(scale * 1.05f, 0.1f).OnComplete(() => 
-        {
-            other.transform.DOScale(scale, 0.1f);
+            else
+            {
+                enemyState.needKillBullet = 0;
+            }
+
+            if (enemyState.needKillBulletText != null)
+            {
+                enemyState.needKillBulletText.text = "" + enemyState.needKillBullet;
+            }
+
+            Vector3 scale = other.transform.localScale;
+            other.transform.DOScale(scale * 1.05f, 0.1f).OnComplete(() => 
+            {
+                if (other != null)
+                {
+                    other.transform.DOScale(scale, 0.1f);
+                }
             });
+        }
         Destroy(gameObject);
     }
 }

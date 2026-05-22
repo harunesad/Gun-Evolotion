@@ -5,10 +5,20 @@ using UnityEngine.UI;
 
 public class PlayerMoveState : PlayerBaseState
 {
+    private GunProperties cachedGunProperties;
+
     public override void EnterState(PlayerStateManager player)
     {
         SpawnUpgrade.upgrade.NewRateFire();
-        player.levelText.text = "Level " + player.firstGun.firstGunObj.GetComponent<GunProperties>().playerLevel;
+        if (FirstGunSpawn.first != null && FirstGunSpawn.first.firstGunObj != null)
+        {
+            cachedGunProperties = FirstGunSpawn.first.firstGunObj.GetComponent<GunProperties>();
+        }
+        
+        if (cachedGunProperties != null && player.levelText != null)
+        {
+            player.levelText.text = "Level " + cachedGunProperties.playerLevel;
+        }
     }
 
     public override void OnTriggerExit(PlayerStateManager player, Collider other)
@@ -23,14 +33,26 @@ public class PlayerMoveState : PlayerBaseState
 
     public override void UpdateState(PlayerStateManager player)
     {
-        if (FirstGunSpawn.first.firstGunObj.GetComponent<GunProperties>().playerLevel == 0)
+        if (cachedGunProperties == null || (FirstGunSpawn.first != null && FirstGunSpawn.first.firstGunObj != null && cachedGunProperties.gameObject != FirstGunSpawn.first.firstGunObj))
         {
-            player.SwitchState(player.DieState);
+            if (FirstGunSpawn.first != null && FirstGunSpawn.first.firstGunObj != null)
+            {
+                cachedGunProperties = FirstGunSpawn.first.firstGunObj.GetComponent<GunProperties>();
+            }
         }
-        if (Collect.collect.isStart)
+
+        if (cachedGunProperties != null)
         {
-            player.moveSpeed = FirstGunSpawn.first.firstGunObj.GetComponent<GunProperties>().moveSpeed;
-            player.player.transform.Translate(Vector3.forward * Time.deltaTime * player.moveSpeed);
+            if (cachedGunProperties.playerLevel == 0)
+            {
+                player.SwitchState(player.DieState);
+                return;
+            }
+            if (Collect.collect != null && Collect.collect.isStart)
+            {
+                player.moveSpeed = cachedGunProperties.moveSpeed;
+                player.player.transform.Translate(Vector3.forward * Time.deltaTime * player.moveSpeed);
+            }
         }
     }
 }

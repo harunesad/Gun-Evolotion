@@ -37,9 +37,14 @@ public class SpawnUpgrade : MonoBehaviour
     public void NewRateFire()
     {
         gunProperties = FirstGunSpawn.first.firstGunObj.GetComponent<GunProperties>();
-        gunProperties.spawnSpeed -= (float)(so.rateFireId[FirstGunSpawn.first.startIndex] - 1) / 40;
+        float rawSpeed = gunProperties.spawnSpeed - (float)(so.rateFireId[FirstGunSpawn.first.startIndex] - 1) / 40f;
+        gunProperties.spawnSpeed = Mathf.Max(0.05f, rawSpeed);
+        
         PlayerStateManager playerState = FindObjectOfType<PlayerStateManager>();
-        playerState.spawnSpeed = gunProperties.spawnSpeed;
+        if (playerState != null)
+        {
+            playerState.spawnSpeed = gunProperties.spawnSpeed;
+        }
     }
     public void BuyCash()
     {
@@ -82,8 +87,14 @@ public class SpawnUpgrade : MonoBehaviour
             Collect.collect.cash -= gunProperties.rateFireCost;
             PlayerPrefs.SetInt("Cash", Collect.collect.cash);
             Collect.collect.cashText.text = "" + PlayerPrefs.GetInt("Cash") + " $";
-            gunProperties.spawnSpeed -= (float)(so.rateFireId[FirstGunSpawn.first.startIndex]) / 40;
-            playerStateManager.spawnSpeed = gunProperties.spawnSpeed;
+            
+            float targetSpeed = gunProperties.spawnSpeed - (float)(so.rateFireId[FirstGunSpawn.first.startIndex]) / 40f;
+            gunProperties.spawnSpeed = Mathf.Max(0.05f, targetSpeed);
+            
+            if (playerStateManager != null)
+            {
+                playerStateManager.spawnSpeed = gunProperties.spawnSpeed;
+            }
             so.rateFireId[FirstGunSpawn.first.startIndex]++;
             gunProperties.rateFireLevel = so.rateFireId[FirstGunSpawn.first.startIndex];
             rateFireLevelText.text = "" + gunProperties.rateFireLevel;
